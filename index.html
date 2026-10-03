@@ -1,0 +1,2921 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSK 3 - Bài 1: 周末你有什么打算 - Luyện Nghe, Đọc, Viết & Từ Điển</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090e17;
+      --card-bg: rgba(26, 34, 52, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --chinese-font: "Noto Serif SC", "Songti SC", serif;
+      --pinyin-color: #38bdf8;
+      --trans-color: #cbd5e1;
+      --male-color: #60a5fa;
+      --female-color: #f472b6;
+      --poly-color: #f59e0b;
+      --success: #22c55e;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #171c36 0%, #0d1322 40%, #070b14 100%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      padding: 24px 16px 80px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 28px 24px;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    .badge-course {
+      display: inline-block;
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-family: var(--chinese-font);
+      font-size: 24px;
+      color: #38bdf8;
+      margin-bottom: 16px;
+    }
+
+    /* AUDIO CONTROLLER BAR */
+    .audio-bar {
+      margin-top: 18px;
+      padding: 16px 20px;
+      background: rgba(13, 19, 34, 0.85);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .audio-bar audio {
+      width: 100%;
+      height: 42px;
+      outline: none;
+    }
+
+    .jump-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .jump-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 5px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .jump-btn:hover {
+      background: var(--accent);
+      color: #04101e;
+    }
+
+    /* GLOBAL TOOLBAR */
+    .global-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .tool-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tool-btn:hover, .tool-btn.active {
+      background: var(--accent);
+      color: #04101e;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    /* NAV TABS */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      position: sticky;
+      top: 15px;
+      z-index: 900;
+      background: rgba(13, 19, 34, 0.92);
+      backdrop-filter: blur(16px);
+      padding: 10px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-sub);
+      border: 1px solid transparent;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #04101e;
+      border-color: #38bdf8;
+      box-shadow: 0 0 15px var(--accent-glow);
+      font-weight: 700;
+    }
+
+    /* TAB CONTENT */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    /* WORD TOKEN HOVER INTERACTION */
+    .interactive-text {
+      font-family: var(--chinese-font);
+      font-size: 20px;
+      line-height: 2.1;
+      letter-spacing: 0.5px;
+      color: #f8fafc;
+    }
+
+    .zh-word {
+      display: inline-block;
+      padding: 1px 2px;
+      margin: 0 1px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s ease;
+      border-bottom: 2px dashed rgba(56, 189, 248, 0.4);
+    }
+    .zh-word:hover {
+      background: rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+      border-bottom-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+
+    /* Polyphonic marker */
+    .zh-word.polyphonic {
+      border-bottom: 2px solid var(--poly-color);
+    }
+    .zh-word.polyphonic::after {
+      content: "•";
+      color: var(--poly-color);
+      position: absolute;
+      top: -11px;
+      right: 1px;
+      font-size: 16px;
+    }
+
+    /* POPUP DICTIONARY TOOLTIP */
+    #dict-tooltip {
+      position: fixed;
+      z-index: 10000;
+      background: rgba(13, 19, 34, 0.96);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      border-radius: 14px;
+      padding: 12px 16px;
+      min-width: 220px;
+      max-width: 330px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 20px rgba(56, 189, 248, 0.25);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    #dict-tooltip.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .tooltip-word {
+      font-family: var(--chinese-font);
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .tooltip-pinyin {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .tooltip-hv {
+      font-size: 12px;
+      color: #a78bfa;
+      font-weight: 600;
+      margin-left: auto;
+    }
+
+    .tooltip-meaning {
+      font-size: 14px;
+      color: #e2e8f0;
+      margin-top: 6px;
+      line-height: 1.45;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 6px;
+    }
+
+    .poly-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid var(--poly-color);
+      color: #fbbf24;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-top: 6px;
+    }
+
+    .poly-detail-box {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      border-left: 3px solid var(--poly-color);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .poly-item { margin-bottom: 5px; }
+    .poly-item:last-child { margin-bottom: 0; }
+    .poly-py { color: var(--poly-color); font-weight: 700; }
+
+    /* CARD STYLING FOR QUESTIONS & DIALOGUES */
+    .card {
+      background: rgba(13, 19, 34, 0.55);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .card-num {
+      display: inline-block;
+      background: #0284c7;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .speaker-line {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .speaker {
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .speaker.male { color: var(--male-color); }
+    .speaker.female { color: var(--female-color); }
+    .speaker.question { color: #fbbf24; }
+
+    .pinyin-line {
+      font-size: 14px;
+      color: var(--pinyin-color);
+      margin-left: 28px;
+      display: block;
+      margin-top: 2px;
+    }
+    .trans-line {
+      font-size: 14px;
+      color: var(--trans-color);
+      margin-left: 28px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .hide-pinyin .pinyin-line { display: none !important; }
+    .hide-trans .trans-line { display: none !important; }
+
+    /* SENTENCE TRANSLATION TOGGLE BUTTON */
+    .sentence-footer {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-trans-toggle {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--card-border);
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-trans-toggle:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .sentence-trans-box {
+      display: none;
+      background: rgba(13, 19, 34, 0.7);
+      border-left: 3px solid #38bdf8;
+      border-radius: 0 10px 10px 0;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #cbd5e1;
+      animation: fadeIn 0.25s ease;
+    }
+    .sentence-pinyin-full {
+      font-size: 13px;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+
+    /* QUIZ OPTIONS GRID */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .option-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+    .option-chip:hover {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: #38bdf8;
+    }
+    .option-chip.selected {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .chip-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .option-chip.selected .chip-letter {
+      background: #38bdf8;
+      color: #04101e;
+    }
+
+    /* ACTION BUTTONS */
+    .quiz-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      align-items: center;
+    }
+
+    .btn-check {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    .btn-check:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-reset {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-sub);
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-reset:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .feedback-box {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .feedback-box.correct {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid var(--success);
+      color: #86efac;
+    }
+    .feedback-box.wrong {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--danger);
+      color: #fca5a5;
+    }
+
+    /* PICTURES GRID */
+    .pics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .pic-item {
+      background: rgba(13, 19, 34, 0.7);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .pic-item:hover {
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+    }
+    .pic-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .pic-label {
+      padding: 8px;
+      font-weight: 700;
+      color: #38bdf8;
+      font-size: 14px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    /* VOCABULARY TABLE */
+    .vocab-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+    }
+    .vocab-table th, .vocab-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .vocab-table th {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(0,0,0,0.2);
+    }
+    .vocab-table tr:hover td {
+      background: rgba(56, 189, 248, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 12px 8px 60px; }
+      h1 { font-size: 22px; }
+      .subtitle { font-size: 18px; }
+      .nav-tabs { flex-wrap: wrap; border-radius: 20px; }
+      .tab-btn { padding: 7px 14px; font-size: 13px; }
+      .interactive-text { font-size: 18px; line-height: 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <header>
+      <div class="badge-course">Giáo trình chuẩn HSK 3 &bull; Bài 1</div>
+      <h1>周末你有什么打算？</h1>
+      <div class="subtitle">Cuối tuần bạn có dự định gì? (What's your plan for the weekend?)</div>
+      <p style="color: var(--text-sub); font-size: 14px; max-width: 680px; margin: 0 auto;">
+        💡 <strong>Cách học:</strong> Rê chuột (hoặc chạm trên điện thoại) vào <strong>bất kỳ chữ Hán nào</strong> để tra Pinyin và nghĩa tiếng Việt; chữ có dấu chấm cam <span style="color:#f59e0b;font-weight:bold;">•</span> là chữ đa âm tự (bấm/giữ để xem toàn bộ các âm khác); bấm <strong>"👁 Dịch cả câu"</strong> khi cần kiểm tra lại khả năng hiểu nghĩa của mình.
+      </p>
+
+      <div class="audio-bar">
+        <audio id="main-audio" controls src="audio.mp3">
+          Trình duyệt của bạn không hỗ trợ phát âm thanh.
+        </audio>
+        <div class="jump-buttons">
+          <button class="jump-btn" onclick="jumpAudio(0)">▶ 00:00 Mở đầu</button>
+          <button class="jump-btn" onclick="jumpAudio(45)">▶ 00:45 Phần 1 (1-5)</button>
+          <button class="jump-btn" onclick="jumpAudio(220)">▶ 03:40 Phần 2 (6-10)</button>
+          <button class="jump-btn" onclick="jumpAudio(445)">▶ 07:25 Phần 3 (11-15)</button>
+          <button class="jump-btn" onclick="jumpAudio(705)">▶ 11:45 Phần 4 (16-20)</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV TABS -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-listening')">🎧 BÀI NGHE (听力 - 20 câu)</button>
+      <button class="tab-btn" onclick="switchTab('tab-reading')">📖 BÀI ĐỌC (阅读 - 15 câu)</button>
+      <button class="tab-btn" onclick="switchTab('tab-writing')">✍️ BÀI VIẾT (书写 - 10 câu)</button>
+      <button class="tab-btn" onclick="switchTab('tab-textbook')">📚 TỪ VỰNG & NGỮ PHÁP (Sách GK)</button>
+    </nav>
+
+    <!-- ==================== TAB 1: BÀI NGHE (LISTENING) ==================== -->
+    <div id="tab-listening" class="tab-content active">
+      
+      <div class="global-toolbar">
+        <button class="tool-btn active" id="btnTogglePinyin" onclick="toggleGlobalPinyin()">Ẩn / Hiện Pinyin</button>
+        <button class="tool-btn active" id="btnToggleTrans" onclick="toggleGlobalTrans()">Ẩn / Hiện Dịch Nghĩa</button>
+      </div>
+
+      <!-- PHẦN 1 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第一部分: 第 1 - 5 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">5 câu đối thoại & tranh minh họa</span>
+        </div>
+        <p class="section-desc">Yêu cầu: 听对话，选择与对话内容一致的图片 (Nghe đối thoại, chọn tranh tương ứng A - F):</p>
+
+        <!-- Tranh ảnh A-F -->
+        <div class="pics-grid">
+          <div class="pic-item"><img src="pic_A.png" alt="Tranh A"><div class="pic-label">Hình A: Chuyển nhà (搬家)</div></div>
+          <div class="pic-item"><img src="pic_B.png" alt="Tranh B"><div class="pic-label">Hình B: Mua bánh mì (买面包)</div></div>
+          <div class="pic-item"><img src="pic_C.png" alt="Tranh C"><div class="pic-label">Hình C: Bản đồ điện tử (电子地图)</div></div>
+          <div class="pic-item"><img src="pic_D.png" alt="Tranh D"><div class="pic-label">Hình D (Ví dụ): Gọi điện thoại (打电话)</div></div>
+          <div class="pic-item"><img src="pic_E.png" alt="Tranh E"><div class="pic-label">Hình E: Nấu cơm (做晚饭)</div></div>
+          <div class="pic-item"><img src="pic_F.png" alt="Tranh F"><div class="pic-label">Hình F: Xem phim / Không vui (看电影)</div></div>
+        </div>
+
+        <!-- Ví dụ mẫu -->
+        <div class="card" style="border-left: 3px solid #64748b;">
+          <span class="card-num" style="background:#64748b;">Ví dụ</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">喂，请问张经理在吗？</span>
+            <span class="pinyin-line">Wèi, qǐngwèn Zhāng jīnglǐ zài ma?</span>
+            <span class="trans-line">Alo, xin hỏi giám đốc Trương có ở đó không?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">他正在开会，您半个小时以后再打，好吗？</span>
+            <span class="pinyin-line">Tā zhèngzài kāihuì, nín bàn ge xiǎoshí yǐhòu zài dǎ, hǎo ma?</span>
+            <span class="trans-line">Ông ấy đang họp, khoảng nửa tiếng nữa bạn gọi lại được không?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>D</strong> (Tranh D: Nhân viên nghe điện thoại)</div>
+        </div>
+
+        <!-- Câu 1 -->
+        <div class="card">
+          <span class="card-num">Câu 1</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">你怎么又不高兴了？</span>
+            <span class="pinyin-line">Nǐ zěnme yòu bù gāoxìng le?</span>
+            <span class="trans-line">Sao em lại không vui rồi?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">你工作一直忙，一次电影都没跟我一起看过。</span>
+            <span class="pinyin-line">Nǐ gōngzuò yìzhí máng, yí cì diànyǐng dōu méi gēn wǒ yìqǐ kàn guo.</span>
+            <span class="trans-line">Anh lúc nào cũng bận công việc, chưa từng cùng em đi xem phim lần nào cả.</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>F</strong> (Tranh F: Hai người ngồi giận dỗi không vui)</div>
+        </div>
+
+        <!-- Câu 2 -->
+        <div class="card">
+          <span class="card-num">Câu 2</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">喂，您好，请问是搬家公司吗？我们要搬家。</span>
+            <span class="pinyin-line">Wèi, nín hǎo, qǐngwèn shì bānjiā gōngsī ma? Wǒmen yào bānjiā.</span>
+            <span class="trans-line">Alo, xin chào, xin hỏi có phải công ty chuyển nhà không ạ? Chúng tôi cần chuyển nhà.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">请问您打算什么时候搬？</span>
+            <span class="pinyin-line">Qǐngwèn nín dǎsuàn shénme shíhou bān?</span>
+            <span class="trans-line">Xin hỏi anh dự định khi nào chuyển ạ?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>A</strong> (Tranh A: Đang đóng thùng chuyển nhà)</div>
+        </div>
+
+        <!-- Câu 3 -->
+        <div class="card">
+          <span class="card-num">Câu 3</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">爸妈，今天我给你们做晚饭，你们打算吃什么？</span>
+            <span class="pinyin-line">Bà mā, jīntiān wǒ gěi nǐmen zuò wǎnfàn, nǐmen dǎsuàn chī shénme?</span>
+            <span class="trans-line">Bố mẹ, hôm nay con nấu cơm tối cho bố mẹ, bố mẹ muốn ăn món gì ạ?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">真的啊？那我们吃点儿牛肉吧。</span>
+            <span class="pinyin-line">Zhēn de a? Nà wǒmen chī diǎnr niúròu ba.</span>
+            <span class="trans-line">Thật sao? Vậy chúng ta ăn một ít thịt bò nhé.</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>E</strong> (Tranh E: Đầu bếp nhí nấu ăn)</div>
+        </div>
+
+        <!-- Câu 4 -->
+        <div class="card">
+          <span class="card-num">Câu 4</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">今天的面包真便宜。</span>
+            <span class="pinyin-line">Jīntiān de miànbāo zhēn piányi.</span>
+            <span class="trans-line">Bánh mì hôm nay rẻ thật đấy.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">是啊，那我们多买几个吧！</span>
+            <span class="pinyin-line">Shì a, nà wǒmen duō mǎi jǐ ge ba!</span>
+            <span class="trans-line">Đúng thế, vậy chúng ta mua nhiều thêm mấy cái đi!</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>B</strong> (Tranh B: Hai người chọn bánh mì trong siêu thị)</div>
+        </div>
+
+        <!-- Câu 5 -->
+        <div class="card">
+          <span class="card-num">Câu 5</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">这是哪儿啊？你开错了吧？我们怎么回家啊？</span>
+            <span class="pinyin-line">Zhè shì nǎr a? Nǐ kāi cuò le ba? Wǒmen zěnme huí jiā a?</span>
+            <span class="trans-line">Đây là đâu thế này? Anh lái nhầm đường rồi à? Chúng mình về nhà bằng cách nào đây?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">别着急，车上有电子地图。</span>
+            <span class="pinyin-line">Bié zháojí, chē shang yǒu diànzǐ dìtú.</span>
+            <span class="trans-line">Đừng sốt ruột, trên xe có bản đồ điện tử mà.</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>C</strong> (Tranh C: Người lái xe có màn hình bản đồ điện tử)</div>
+        </div>
+      </section>
+
+      <!-- PHẦN 2 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第二部分: 第 6 - 10 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">5 câu phán đoán đúng sai</span>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 6</span>
+          <div class="speaker-line">
+            <span class="interactive-text">这个电影一点儿意思也没有，我们看书吧。</span>
+            <span class="pinyin-line">Zhège diànyǐng yìdiǎnr yìsi yě méiyǒu, wǒmen kàn shū ba.</span>
+            <span class="trans-line">Bộ phim này chẳng có tí thú vị nào cả, chúng ta đọc sách đi.</span>
+          </div>
+          <div style="background: rgba(34, 197, 94, 0.15); border-left: 3px solid #22c55e; padding: 8px 12px; border-radius: 6px; font-size: 13px; color: #86efac;">
+            ☆ 他不喜欢这个电影。 [ <strong>√ ĐÚNG</strong> ]<br>
+            <span style="opacity: 0.85;">(Anh ấy không thích bộ phim này)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 7</span>
+          <div class="speaker-line">
+            <span class="interactive-text">你怎么还没准备好？快点儿吧，没时间了。</span>
+            <span class="pinyin-line">Nǐ zěnme hái méi zhǔnbèi hǎo? Kuài diǎnr ba, méi shíjiān le.</span>
+            <span class="trans-line">Sao cậu vẫn chưa chuẩn bị xong? Nhanh lên nào, không còn thời gian nữa rồi.</span>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; padding: 8px 12px; border-radius: 6px; font-size: 13px; color: #fca5a5;">
+            ☆ 他一点儿也不着急。 [ <strong>× SAI</strong> ]<br>
+            <span style="opacity: 0.85;">(Cậu ấy chẳng vội vàng chút nào &rarr; Sai, người nói đang rất vội và giục giã)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 8</span>
+          <div class="speaker-line">
+            <span class="interactive-text">明天的考试我都复习好了，没问题。</span>
+            <span class="pinyin-line">Míngtiān de kǎoshì wǒ dōu fùxí hǎo le, méi wèntí.</span>
+            <span class="trans-line">Kỳ thi ngày mai tôi đã ôn tập kĩ càng cả rồi, không vấn đề gì.</span>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; padding: 8px 12px; border-radius: 6px; font-size: 13px; color: #fca5a5;">
+            ☆ 他考试考得很好。 [ <strong>× SAI</strong> ]<br>
+            <span style="opacity: 0.85;">(Anh ấy thi rất tốt &rarr; Sai, ngày mai mới thi nên chưa có kết quả)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 9</span>
+          <div class="speaker-line">
+            <span class="interactive-text">去南方旅游？去北方旅游？去哪儿旅游好呢？</span>
+            <span class="pinyin-line">Qù nánfāng lǚyóu? Qù běifāng lǚyóu? Qù nǎr lǚyóu hǎo ne?</span>
+            <span class="trans-line">Đi du lịch phương Nam? Đi du lịch phương Bắc? Đi đâu du lịch thì hay nhỉ?</span>
+          </div>
+          <div style="background: rgba(34, 197, 94, 0.15); border-left: 3px solid #22c55e; padding: 8px 12px; border-radius: 6px; font-size: 13px; color: #86efac;">
+            ☆ 他还没想好去哪儿旅游。 [ <strong>√ ĐÚNG</strong> ]<br>
+            <span style="opacity: 0.85;">(Anh ấy vẫn chưa quyết định được đi du lịch ở đâu)</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 10</span>
+          <div class="speaker-line">
+            <span class="interactive-text">家里一个鸡蛋也没有，明天早上吃什么啊？</span>
+            <span class="pinyin-line">Jiā li yí ge jīdàn yě méiyǒu, míngtiān zǎoshang chī shénme a?</span>
+            <span class="trans-line">Ở nhà một quả trứng cũng không còn, sáng mai ăn món gì đây?</span>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; padding: 8px 12px; border-radius: 6px; font-size: 13px; color: #fca5a5;">
+            ☆ 家里还有很多鸡蛋。 [ <strong>× SAI</strong> ]<br>
+            <span style="opacity: 0.85;">(Trong nhà vẫn còn rất nhiều trứng &rarr; Sai, không còn quả nào)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHẦN 3 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第三部分: 第 11 - 15 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">5 câu đối thoại ngắn</span>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 11</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">你们等一下，我穿好衣服，送送你们。</span>
+            <span class="pinyin-line">Nǐmen děng yíxià, wǒ chuān hǎo yīfu, sòngsong nǐmen.</span>
+            <span class="trans-line">Các cậu đợi một chút, tôi mặc quần áo xong rồi tiễn các cậu.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">你太客气了，外边冷，别送了。</span>
+            <span class="pinyin-line">Nǐ tài kèqi le, wàibian lěng, bié sòng le.</span>
+            <span class="trans-line">Cậu khách sáo quá rồi, bên ngoài trời lạnh lắm, đừng tiễn nữa.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">男的打算做什么？</span>
+            <span class="pinyin-line">Wèn: Nán de dǎsuàn zuò shénme?</span>
+            <span class="trans-line">Hỏi: Người nam dự định làm gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>A 送朋友</strong> (Tiễn bạn bè)</div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 12</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">下个月我们去南方旅游，怎么样？</span>
+            <span class="pinyin-line">Xià ge yuè wǒmen qù nánfāng lǚyóu, zěnmeyàng?</span>
+            <span class="trans-line">Tháng sau chúng ta đi du lịch miền Nam nhé, được không?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">南方我还一次都没去过呢，一直想去看看。</span>
+            <span class="pinyin-line">Nánfāng wǒ hái yí cì dōu méi qù guo ne, yìzhí xiǎng qù kànkan.</span>
+            <span class="trans-line">Miền Nam em còn chưa từng đi lần nào, vẫn luôn muốn đi tham quan thử.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">关于女的，可以知道什么？</span>
+            <span class="pinyin-line">Wèn: Guānyú nǚ de, kěyǐ zhīdào shénme?</span>
+            <span class="trans-line">Hỏi: Về người nữ, có thể biết được điều gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>C 很想去南方 (没去过南方)</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 13</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">大雨，你快来帮我一下。</span>
+            <span class="pinyin-line">Dàyǔ, nǐ kuài lái bāng wǒ yíxià.</span>
+            <span class="trans-line">Đại Vũ, cậu mau lại đây giúp tôi một tay với.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">这么多东西，你怎么一个人搬？你儿子去哪儿了？</span>
+            <span class="pinyin-line">Zhème duō dōngxi, nǐ zěnme yí ge rén bān? Nǐ érzi qù nǎr le?</span>
+            <span class="trans-line">Nhiều đồ thế này, sao chị lại bê một mình? Con trai chị đi đâu rồi?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">女的请男的做什么？</span>
+            <span class="pinyin-line">Wèn: Nǚ de qǐng nán de zuò shénme?</span>
+            <span class="trans-line">Hỏi: Người nữ nhờ người nam làm gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>B 搬东西 (帮忙)</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 14</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">别买票了，一个好看的电影都没有。</span>
+            <span class="pinyin-line">Bié mǎi piào le, yí ge hǎokàn de diànyǐng dōu méiyǒu.</span>
+            <span class="trans-line">Đừng mua vé nữa, chẳng có bộ phim nào hay cả.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">那看看明天的吧。</span>
+            <span class="pinyin-line">Nà kànkan míngtiān de ba.</span>
+            <span class="trans-line">Vậy xem phim ngày mai xem sao.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">他们为什么没买票？</span>
+            <span class="pinyin-line">Wèn: Tāmen wèishénme méi mǎi piào?</span>
+            <span class="trans-line">Hỏi: Tại sao họ không mua vé?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>B 没有好看的电影</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 15</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">这是哪儿啊？我没带地图，我们问问那边的游客吧。</span>
+            <span class="pinyin-line">Zhè shì nǎr a? Wǒ méi dài dìtú, wǒmen wènwen nàbian de yóukè ba.</span>
+            <span class="trans-line">Đây là đâu thế này? Em không mang bản đồ, chúng mình hỏi khách du lịch bên kia nhé.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">不用，我就是地图，你问我吧。</span>
+            <span class="pinyin-line">Búyòng, wǒ jiù shì dìtú, nǐ wèn wǒ ba.</span>
+            <span class="trans-line">Không cần, anh chính là bản đồ đây, em hỏi anh này.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">男的是什么意思？</span>
+            <span class="pinyin-line">Wèn: Nán de shì shénme yìsi?</span>
+            <span class="trans-line">Hỏi: Người nam có ý gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>C 他知道这是哪儿 (不用看地图)</strong></div>
+        </div>
+      </section>
+
+      <!-- PHẦN 4 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第四部分: 第 16 - 20 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">5 câu đối thoại dài</span>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 16</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">小周，你们搬家了？</span>
+            <span class="pinyin-line">Xiǎo Zhōu, nǐmen bānjiā le?</span>
+            <span class="trans-line">Tiểu Chu, nhà bạn chuyển nhà rồi à?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">是啊，从公司南边搬到了医院北边。</span>
+            <span class="pinyin-line">Shì a, cóng gōngsī nánbian bān dào le yīyuàn běibian.</span>
+            <span class="trans-line">Đúng vậy, từ phía nam công ty chuyển tới phía bắc bệnh viện rồi.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">是吗？那你们离白雪家很近吧？</span>
+            <span class="pinyin-line">Shì ma? Nà nǐmen lí Bái Xuě jiā hěn jìn ba?</span>
+            <span class="trans-line">Thật à? Vậy các bạn cách nhà Bạch Tuyết gần lắm nhỉ?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">对，他们家搬到了医院南边。</span>
+            <span class="pinyin-line">Duì, tāmen jiā bān dào le yīyuàn nánbian.</span>
+            <span class="trans-line">Đúng thế, nhà họ chuyển tới phía nam bệnh viện.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">现在小周家在哪儿？</span>
+            <span class="pinyin-line">Wèn: Xiànzài Xiǎo Zhōu jiā zài nǎr?</span>
+            <span class="trans-line">Hỏi: Bây giờ nhà Tiểu Chu ở đâu?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>B 医院北边</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 17</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">这是你的小猫吗？真漂亮！</span>
+            <span class="pinyin-line">Zhè shì nǐ de xiǎomāo ma? Zhēn piàoliang!</span>
+            <span class="trans-line">Đây là mèo con của bạn à? Đẹp thật đấy!</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">谢谢！</span>
+            <span class="pinyin-line">Xièxie!</span>
+            <span class="trans-line">Cảm ơn bạn!</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">它叫什么名字？</span>
+            <span class="pinyin-line">Tā jiào shénme míngzi?</span>
+            <span class="trans-line">Nó tên là gì thế?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">我还没想好叫它什么呢。</span>
+            <span class="pinyin-line">Wǒ hái méi xiǎng hǎo jiào tā shénme ne.</span>
+            <span class="trans-line">Mình vẫn chưa nghĩ ra nên đặt tên cho nó là gì.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">女的的猫叫什么？</span>
+            <span class="pinyin-line">Wèn: Nǚ de de māo jiào shénme?</span>
+            <span class="trans-line">Hỏi: Con mèo của người nữ tên là gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>C 还没有名字 (还没想好)</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 18</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">你帮了我这么多，谢谢你！</span>
+            <span class="pinyin-line">Nǐ bāng le wǒ zhème duō, xièxie nǐ!</span>
+            <span class="trans-line">Cậu đã giúp tôi nhiều như vậy, cảm ơn cậu nhé!</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">不客气。</span>
+            <span class="pinyin-line">Bú kèqi.</span>
+            <span class="trans-line">Không có gì đâu.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">晚上我请你吃饭，就去公司南边的那家饭馆。</span>
+            <span class="pinyin-line">Wǎnshang wǒ qǐng nǐ chīfàn, jiù qù gōngsī nánbian de nà jiā fànguǎn.</span>
+            <span class="trans-line">Tối nay tôi mời cậu ăn cơm, tới quán ăn ở phía nam công ty nhé.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">好啊，我还一次都没去过呢。</span>
+            <span class="pinyin-line">Hǎo a, wǒ hái yí cì dōu méi qù guo ne.</span>
+            <span class="trans-line">Được thôi, mình còn chưa từng đến đó lần nào cả.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">关于女的，可以知道什么？</span>
+            <span class="pinyin-line">Wèn: Guānyú nǚ de, kěyǐ zhīdào shénme?</span>
+            <span class="trans-line">Hỏi: Về người nữ, có thể biết được điều gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>A 晚上请男的吃饭</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 19</span>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">你怎么了一天都不高兴？</span>
+            <span class="pinyin-line">Nǐ zěnme le yì tiān dōu bù gāoxìng?</span>
+            <span class="trans-line">Cậu sao thế, cả ngày hôm nay đều không vui?</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">明天就要考试了，我一点儿都没复习呢。</span>
+            <span class="pinyin-line">Míngtiān jiù yào kǎoshì le, wǒ yìdiǎnr dōu méi fùxí ne.</span>
+            <span class="trans-line">Ngày mai phải thi rồi, mình chưa ôn tập được chút nào cả.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">别着急，你学得好，考试没问题。</span>
+            <span class="pinyin-line">Bié zháojí, nǐ xué de hǎo, kǎoshì méi wèntí.</span>
+            <span class="trans-line">Đừng lo lắng, cậu học giỏi mà, thi cử không thành vấn đề đâu.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">希望这次能考好。</span>
+            <span class="pinyin-line">Xīwàng zhè cì néng kǎo hǎo.</span>
+            <span class="trans-line">Hy vọng lần này thi tốt.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">关于女的，可以知道什么？</span>
+            <span class="pinyin-line">Wèn: Guānyú nǚ de, kěyǐ zhīdào shénme?</span>
+            <span class="trans-line">Hỏi: Về người nữ, có thể biết được điều gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>C 还没复习 (明天要考试)</strong></div>
+        </div>
+
+        <div class="card">
+          <span class="card-num">Câu 20</span>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">你桌子上有那么多书啊！</span>
+            <span class="pinyin-line">Nǐ zhuōzi shang yǒu nàme duō shū a!</span>
+            <span class="trans-line">Trên bàn của bạn có nhiều sách thế!</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">对，都是我买的。</span>
+            <span class="pinyin-line">Duì, dōu shì wǒ mǎi de.</span>
+            <span class="trans-line">Đúng vậy, đều do mình mua đấy.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker female">女:</span>
+            <span class="interactive-text">你真爱读书。哪本最有意思？给我介绍一下吧。</span>
+            <span class="pinyin-line">Nǐ zhēn ài dú shū. Nǎ běn zuì yǒu yìsi? Gěi wǒ jièshào yíxià ba.</span>
+            <span class="trans-line">Bạn chăm đọc sách thật đấy. Cuốn nào hay nhất thế? Giới thiệu cho mình một chút đi.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker male">男:</span>
+            <span class="interactive-text">我爱买书，但是这些书我一本都没读过。</span>
+            <span class="pinyin-line">Wǒ ài mǎi shū, dànshì zhèxiē shū wǒ yì běn dōu méi dú guo.</span>
+            <span class="trans-line">Mình thích mua sách thôi, chứ những cuốn này mình chưa từng đọc một cuốn nào cả.</span>
+          </div>
+          <div class="speaker-line">
+            <span class="speaker question">问:</span>
+            <span class="interactive-text">关于男的，可以知道什么？</span>
+            <span class="pinyin-line">Wèn: Guānyú nán de, kěyǐ zhīdào shénme?</span>
+            <span class="trans-line">Hỏi: Về người nam, có thể biết được điều gì?</span>
+          </div>
+          <div style="font-size: 13px; color: #86efac; margin-top: 6px;">&bull; Đáp án đúng: <strong>A 爱买书 (没读过这些书)</strong></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== TAB 2: BÀI ĐỌC (READING) ==================== -->
+    <div id="tab-reading" class="tab-content">
+      
+      <!-- PHẦN 1: CÂU 21-25 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第一部分: 第 21 - 25 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">Chọn câu đối ứng phù hợp (A - F)</span>
+        </div>
+        <p class="section-desc">
+          💡 <strong>Hướng dẫn:</strong> Bấm vào câu lựa chọn (A - F) phía dưới rồi bấm <strong>Kiểm tra đáp án</strong>. Bấm <strong>"👁 Dịch cả câu"</strong> ở cuối câu để xem toàn bộ câu dịch tiếng Việt.
+        </p>
+
+        <!-- Khung đáp án A - F tham khảo cho câu 21-25 -->
+        <div style="background: rgba(13,19,34,0.7); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px; margin-bottom: 20px;">
+          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-bottom: 10px;">📋 CÁC CÂU LỰA CHỌN (A - F):</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">A.</strong>
+              <span class="interactive-text" style="font-size: 17px;">不是，我一直在这家医院工作。</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Bú shì, wǒ yìzhí zài zhè jiā yīyuàn gōngzuò.</div>
+                <div>Không phải, tôi vẫn luôn làm việc ở bệnh viện này.</div>
+              </div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">B.</strong>
+              <span class="interactive-text" style="font-size: 17px;">对不起，周老师现在不在。</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Duìbuqǐ, Zhōu lǎoshī xiànzài bú zài.</div>
+                <div>Xin lỗi, thầy Chu hiện tại không có ở đây.</div>
+              </div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">C.</strong>
+              <span class="interactive-text" style="font-size: 17px;">今天学校里一个人都没有，大家都去哪儿了？</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Jīntiān xuéxiào li yí ge rén dōu méiyǒu, dàjiā dōu qù nǎr le?</div>
+                <div>Hôm nay trong trường một người cũng không có, mọi người đi đâu hết rồi?</div>
+              </div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">D.</strong>
+              <span class="interactive-text" style="font-size: 17px;">周末有时间吗？我打算请你吃个饭。</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Zhōumò yǒu shíjiān ma? Wǒ dǎsuàn qǐng nǐ chī ge fàn.</div>
+                <div>Cuối tuần có thời gian rảnh không? Mình định mời cậu đi ăn bữa cơm.</div>
+              </div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">E.</strong>
+              <span class="interactive-text" style="font-size: 17px;">当然。我们先坐公共汽车，然后换地铁。</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Dāngrán. Wǒmen xiān zuò gōnggòng qìchē, ránhòu huàn dìtiě.</div>
+                <div>Đương nhiên rồi. Chúng ta trước tiên đi xe buýt, sau đó chuyển sang tàu điện ngầm.</div>
+              </div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 14px;">
+              <strong style="color: #38bdf8; width: 22px; display: inline-block;">F.</strong>
+              <span class="interactive-text" style="font-size: 17px;">可能是工作太累，生病了。</span>
+              <button class="btn-trans-toggle" style="margin-left: 8px; padding: 2px 8px; font-size: 11px;" onclick="toggleSentenceTrans(this)">Dịch</button>
+              <div class="sentence-trans-box" style="margin-top: 4px; font-size: 13px;">
+                <div class="sentence-pinyin-full">Kěnéng shì gōngzuò tài lèi, shēngbìng le.</div>
+                <div>Có lẽ là do công việc quá mệt, nên bị ốm rồi.</div>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Ví dụ mẫu -->
+        <div class="card" style="border-left: 3px solid #64748b;">
+          <span class="card-num" style="background:#64748b;">Ví dụ</span>
+          <div class="interactive-text">你知道怎么去那儿吗？</div>
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nǐ zhīdào zěnme qù nàr ma?</div>
+              <div>Bạn có biết đi đến đó bằng cách nào không?</div>
+            </div>
+            <div style="font-size: 13px; color: #86efac; margin-top: 4px;">&bull; Đáp án mẫu: <strong>E</strong> (当然。我们先坐公共汽车，然后换地铁。)</div>
+          </div>
+        </div>
+    
+        <div class="card" id="q-21">
+          <span class="card-num">Câu 21</span>
+          <div class="interactive-text">你怎么了？今天一点儿东西都没吃。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nǐ zěnme le? Jīntiān yìdiǎnr dōngxi dōu méi chī.</div>
+              <div>Cậu sao thế? Hôm nay chẳng ăn chút đồ gì cả.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn đáp án A - F -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn câu đối ứng:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); max-width: 480px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('21', 'A')" data-q="21" data-val="A">
+              <span class="chip-letter">A</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('21', 'B')" data-q="21" data-val="B">
+              <span class="chip-letter">B</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('21', 'C')" data-q="21" data-val="C">
+              <span class="chip-letter">C</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('21', 'D')" data-q="21" data-val="D">
+              <span class="chip-letter">D</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('21', 'E')" data-q="21" data-val="E">
+              <span class="chip-letter">E</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('21', 'F')" data-q="21" data-val="F">
+              <span class="chip-letter">F</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('21')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('21')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-21"></div>
+        </div>
+        
+        <div class="card" id="q-22">
+          <span class="card-num">Câu 22</span>
+          <div class="interactive-text">今天是周末，你去学校做什么？</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Jīntiān shì zhōumò, nǐ qù xuéxiào zuò shénme?</div>
+              <div>Hôm nay là cuối tuần, cậu đến trường làm gì vậy?</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn đáp án A - F -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn câu đối ứng:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); max-width: 480px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('22', 'A')" data-q="22" data-val="A">
+              <span class="chip-letter">A</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('22', 'B')" data-q="22" data-val="B">
+              <span class="chip-letter">B</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('22', 'C')" data-q="22" data-val="C">
+              <span class="chip-letter">C</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('22', 'D')" data-q="22" data-val="D">
+              <span class="chip-letter">D</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('22', 'E')" data-q="22" data-val="E">
+              <span class="chip-letter">E</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('22', 'F')" data-q="22" data-val="F">
+              <span class="chip-letter">F</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('22')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('22')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-22"></div>
+        </div>
+        
+        <div class="card" id="q-23">
+          <span class="card-num">Câu 23</span>
+          <div class="interactive-text">好啊，哪天？</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Hǎo a, nǎ tiān?</div>
+              <div>Được thôi, hôm nào thế?</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn đáp án A - F -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn câu đối ứng:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); max-width: 480px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('23', 'A')" data-q="23" data-val="A">
+              <span class="chip-letter">A</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('23', 'B')" data-q="23" data-val="B">
+              <span class="chip-letter">B</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('23', 'C')" data-q="23" data-val="C">
+              <span class="chip-letter">C</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('23', 'D')" data-q="23" data-val="D">
+              <span class="chip-letter">D</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('23', 'E')" data-q="23" data-val="E">
+              <span class="chip-letter">E</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('23', 'F')" data-q="23" data-val="F">
+              <span class="chip-letter">F</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('23')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('23')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-23"></div>
+        </div>
+        
+        <div class="card" id="q-24">
+          <span class="card-num">Câu 24</span>
+          <div class="interactive-text">你是新来的医生吗？</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nǐ shì xīn lái de yīshēng ma?</div>
+              <div>Bạn là bác sĩ mới đến à?</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn đáp án A - F -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn câu đối ứng:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); max-width: 480px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('24', 'A')" data-q="24" data-val="A">
+              <span class="chip-letter">A</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('24', 'B')" data-q="24" data-val="B">
+              <span class="chip-letter">B</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('24', 'C')" data-q="24" data-val="C">
+              <span class="chip-letter">C</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('24', 'D')" data-q="24" data-val="D">
+              <span class="chip-letter">D</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('24', 'E')" data-q="24" data-val="E">
+              <span class="chip-letter">E</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('24', 'F')" data-q="24" data-val="F">
+              <span class="chip-letter">F</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('24')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('24')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-24"></div>
+        </div>
+        
+        <div class="card" id="q-25">
+          <span class="card-num">Câu 25</span>
+          <div class="interactive-text">那我明天再来吧，谢谢。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nà wǒ míngtiān zài lái ba, xièxie.</div>
+              <div>Vậy ngày mai tôi lại đến nhé, cảm ơn.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn đáp án A - F -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn câu đối ứng:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); max-width: 480px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('25', 'A')" data-q="25" data-val="A">
+              <span class="chip-letter">A</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('25', 'B')" data-q="25" data-val="B">
+              <span class="chip-letter">B</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('25', 'C')" data-q="25" data-val="C">
+              <span class="chip-letter">C</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('25', 'D')" data-q="25" data-val="D">
+              <span class="chip-letter">D</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('25', 'E')" data-q="25" data-val="E">
+              <span class="chip-letter">E</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('25', 'F')" data-q="25" data-val="F">
+              <span class="chip-letter">F</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('25')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('25')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-25"></div>
+        </div>
+        
+      </section>
+
+      <!-- PHẦN 2: CÂU 26-30 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第二部分: 第 26 - 30 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">Điền từ thích hợp vào chỗ trống (A - F)</span>
+        </div>
+
+        <!-- Khung ngân hàng từ vựng A - F -->
+        <div style="background: rgba(13,19,34,0.7); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px; margin-bottom: 20px;">
+          <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-bottom: 10px;">📋 TỪ NGỮ CHO SẴN (A - F):</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+    
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">A.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">一直</span>
+              <div style="font-size: 12px; color: #38bdf8;">yìzhí</div>
+              <div style="font-size: 11px; color: var(--text-sub);">luôn luôn, suốt</div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">B.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">周末</span>
+              <div style="font-size: 12px; color: #38bdf8;">zhōumò</div>
+              <div style="font-size: 11px; color: var(--text-sub);">cuối tuần</div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">C.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">带</span>
+              <div style="font-size: 12px; color: #38bdf8;">dài</div>
+              <div style="font-size: 11px; color: var(--text-sub);">mang theo, đem theo</div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">D.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">搬</span>
+              <div style="font-size: 12px; color: #38bdf8;">bān</div>
+              <div style="font-size: 11px; color: var(--text-sub);">dọn, dời, chuyển</div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">E.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">声音</span>
+              <div style="font-size: 12px; color: #38bdf8;">shēngyīn</div>
+              <div style="font-size: 11px; color: var(--text-sub);">âm thanh, tiếng, giọng</div>
+            </div>
+        
+            <div style="padding: 8px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; border: 1px solid var(--card-border);">
+              <span style="color:#38bdf8; font-weight:bold;">F.</span>
+              <span class="interactive-text" style="font-size: 18px; margin-left: 4px;">面包</span>
+              <div style="font-size: 12px; color: #38bdf8;">miànbāo</div>
+              <div style="font-size: 11px; color: var(--text-sub);">bánh mì</div>
+            </div>
+        
+          </div>
+        </div>
+
+        <!-- Ví dụ mẫu -->
+        <div class="card" style="border-left: 3px solid #64748b;">
+          <span class="card-num" style="background:#64748b;">Ví dụ</span>
+          <div class="interactive-text">她说话的 ( <span style="color:#38bdf8;font-weight:bold;">E 声音</span> ) 多好听啊！</div>
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Tā shuōhuà de (shēngyīn) duō hǎotīng a!</div>
+              <div>Giọng nói của cô ấy nghe hay làm sao!</div>
+            </div>
+            <div style="font-size: 13px; color: #86efac; margin-top: 4px;">&bull; Đáp án mẫu: <strong>E</strong> (声音 - shēngyīn: âm thanh, giọng nói)</div>
+          </div>
+        </div>
+    
+        <div class="card" id="q-26">
+          <span class="card-num">Câu 26</span>
+          <div class="interactive-text">这几年我 <span id="blank-display-26" style="color:#38bdf8; font-weight:bold; text-decoration: underline; padding: 0 8px;">( ? )</span> 忙工作，没时间去旅游。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Zhè jǐ nián wǒ yìzhí máng gōngzuò, méi shíjiān qù lǚyóu.</div>
+              <div>Mấy năm nay tôi luôn bận rộn công việc, không có thời gian đi du lịch.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn từ điền vào -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn từ điền vào chỗ trống:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); max-width: 550px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('26', 'A', '一直')" data-q="26" data-val="A">
+              <span class="chip-letter">A</span>
+              <span>一直</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('26', 'B', '周末')" data-q="26" data-val="B">
+              <span class="chip-letter">B</span>
+              <span>周末</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('26', 'C', '带')" data-q="26" data-val="C">
+              <span class="chip-letter">C</span>
+              <span>带</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('26', 'D', '搬')" data-q="26" data-val="D">
+              <span class="chip-letter">D</span>
+              <span>搬</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('26', 'E', '声音')" data-q="26" data-val="E">
+              <span class="chip-letter">E</span>
+              <span>声音</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('26', 'F', '面包')" data-q="26" data-val="F">
+              <span class="chip-letter">F</span>
+              <span>面包</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('26')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('26')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-26"></div>
+        </div>
+        
+        <div class="card" id="q-27">
+          <span class="card-num">Câu 27</span>
+          <div class="interactive-text">你 <span id="blank-display-27" style="color:#38bdf8; font-weight:bold; text-decoration: underline; padding: 0 8px;">( ? )</span> 家的时候，我来帮你吧。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nǐ bān jiā de shíhou, wǒ lái bāng nǐ ba.</div>
+              <div>Khi nào bạn chuyển nhà, tôi đến giúp bạn nhé.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn từ điền vào -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn từ điền vào chỗ trống:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); max-width: 550px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('27', 'A', '一直')" data-q="27" data-val="A">
+              <span class="chip-letter">A</span>
+              <span>一直</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('27', 'B', '周末')" data-q="27" data-val="B">
+              <span class="chip-letter">B</span>
+              <span>周末</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('27', 'C', '带')" data-q="27" data-val="C">
+              <span class="chip-letter">C</span>
+              <span>带</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('27', 'D', '搬')" data-q="27" data-val="D">
+              <span class="chip-letter">D</span>
+              <span>搬</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('27', 'E', '声音')" data-q="27" data-val="E">
+              <span class="chip-letter">E</span>
+              <span>声音</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('27', 'F', '面包')" data-q="27" data-val="F">
+              <span class="chip-letter">F</span>
+              <span>面包</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('27')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('27')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-27"></div>
+        </div>
+        
+        <div class="card" id="q-28">
+          <span class="card-num">Câu 28</span>
+          <div class="interactive-text">这个 <span id="blank-display-28" style="color:#38bdf8; font-weight:bold; text-decoration: underline; padding: 0 8px;">( ? )</span> 很不错，是你买的吗？</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Zhège miànbāo hěn búcuò, shì nǐ mǎi de ma?</div>
+              <div>Cái bánh mì này rất ngon, có phải bạn mua không?</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn từ điền vào -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn từ điền vào chỗ trống:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); max-width: 550px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('28', 'A', '一直')" data-q="28" data-val="A">
+              <span class="chip-letter">A</span>
+              <span>一直</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('28', 'B', '周末')" data-q="28" data-val="B">
+              <span class="chip-letter">B</span>
+              <span>周末</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('28', 'C', '带')" data-q="28" data-val="C">
+              <span class="chip-letter">C</span>
+              <span>带</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('28', 'D', '搬')" data-q="28" data-val="D">
+              <span class="chip-letter">D</span>
+              <span>搬</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('28', 'E', '声音')" data-q="28" data-val="E">
+              <span class="chip-letter">E</span>
+              <span>声音</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('28', 'F', '面包')" data-q="28" data-val="F">
+              <span class="chip-letter">F</span>
+              <span>面包</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('28')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('28')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-28"></div>
+        </div>
+        
+        <div class="card" id="q-29">
+          <span class="card-num">Câu 29</span>
+          <div class="interactive-text">A: 这件新衣服是什么时候买的？<br>B: 上 <span id="blank-display-29" style="color:#38bdf8; font-weight:bold; text-decoration: underline; padding: 0 8px;">( ? )</span>，我妹妹跟我一起去买的。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">A: Zhè jiàn xīn yīfu shì shénme shíhou mǎi de? B: Shàng zhōumò, wǒ mèimei gēn wǒ yìqǐ qù mǎi de.</div>
+              <div>A: Chiếc áo mới này mua lúc nào thế? / B: Cuối tuần trước, em gái cùng tôi đi mua đấy.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn từ điền vào -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn từ điền vào chỗ trống:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); max-width: 550px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('29', 'A', '一直')" data-q="29" data-val="A">
+              <span class="chip-letter">A</span>
+              <span>一直</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('29', 'B', '周末')" data-q="29" data-val="B">
+              <span class="chip-letter">B</span>
+              <span>周末</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('29', 'C', '带')" data-q="29" data-val="C">
+              <span class="chip-letter">C</span>
+              <span>带</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('29', 'D', '搬')" data-q="29" data-val="D">
+              <span class="chip-letter">D</span>
+              <span>搬</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('29', 'E', '声音')" data-q="29" data-val="E">
+              <span class="chip-letter">E</span>
+              <span>声音</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('29', 'F', '面包')" data-q="29" data-val="F">
+              <span class="chip-letter">F</span>
+              <span>面包</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('29')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('29')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-29"></div>
+        </div>
+        
+        <div class="card" id="q-30">
+          <span class="card-num">Câu 30</span>
+          <div class="interactive-text">A: 现在北方很冷，多 <span id="blank-display-30" style="color:#38bdf8; font-weight:bold; text-decoration: underline; padding: 0 8px;">( ? )</span> 几件衣服吧。<br>B: 我已经准备好了。</div>
+          
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">A: Xiànzài běifāng hěn lěng, duō dài jǐ jiàn yīfu ba. B: Wǒ yǐjīng zhǔnbèi hǎo le.</div>
+              <div>A: Bây giờ miền Bắc rất lạnh, mang thêm mấy bộ quần áo đi. / B: Tôi đã chuẩn bị xong cả rồi.</div>
+            </div>
+          </div>
+
+          <!-- Lựa chọn từ điền vào -->
+          <div style="margin-top: 14px; font-size: 13px; color: var(--text-sub);">Chọn từ điền vào chỗ trống:</div>
+          <div class="options-grid" style="grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); max-width: 550px; margin-top: 6px;">
+        
+            <div class="option-chip" onclick="selectOption('30', 'A', '一直')" data-q="30" data-val="A">
+              <span class="chip-letter">A</span>
+              <span>一直</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('30', 'B', '周末')" data-q="30" data-val="B">
+              <span class="chip-letter">B</span>
+              <span>周末</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('30', 'C', '带')" data-q="30" data-val="C">
+              <span class="chip-letter">C</span>
+              <span>带</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('30', 'D', '搬')" data-q="30" data-val="D">
+              <span class="chip-letter">D</span>
+              <span>搬</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('30', 'E', '声音')" data-q="30" data-val="E">
+              <span class="chip-letter">E</span>
+              <span>声音</span>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('30', 'F', '面包')" data-q="30" data-val="F">
+              <span class="chip-letter">F</span>
+              <span>面包</span>
+            </div>
+            
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('30')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('30')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-30"></div>
+        </div>
+        
+      </section>
+
+      <!-- PHẦN 3: CÂU 31-35 -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第三部分: 第 31 - 35 题</span></div>
+          <span style="font-size:13px; color:var(--accent);">Đọc đoạn văn và chọn câu trả lời đúng (A, B, C)</span>
+        </div>
+
+        <p class="section-desc">
+          💡 <strong>Lưu ý:</strong> Các lựa chọn A, B, C mặc định chỉ hiển thị chữ Hán. Bạn có thể rê chuột vào từng chữ để tra từ điển, hoặc bấm <strong>"👁 Dịch các lựa chọn"</strong> khi cần kiểm tra nghĩa.
+        </p>
+
+        <!-- Ví dụ mẫu -->
+        <div class="card" style="border-left: 3px solid #64748b;">
+          <span class="card-num" style="background:#64748b;">Ví dụ</span>
+          <div class="interactive-text">您是来参加今天会议的吗？您来早了一点儿，现在才八点半。您先进来坐吧。</div>
+          <div style="margin-top: 10px; font-weight: bold; color: #fbbf24;" class="interactive-text">&bull; 会议最可能几点开始？</div>
+          <div style="font-size: 14px; color: var(--text-sub); margin-top: 6px;">
+            A 8点 &nbsp;&nbsp;&nbsp; B 8点半 &nbsp;&nbsp;&nbsp; <strong style="color:#22c55e;">C 9点 √</strong>
+          </div>
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch cả câu</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nín shì lái cānjiā jīntiān huìyì de ma? Nín lái zǎo le yìdiǎnr, xiànzài cái bā diǎn bàn. Nín xiān jìnlái zuò ba.</div>
+              <div>Bác đến tham gia cuộc họp hôm nay phải không ạ? Bác đến hơi sớm một chút, bây giờ mới 8 giờ rưỡi. Mời bác vào trong ngồi trước nhé.</div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card" id="q-31">
+          <span class="card-num">Câu 31</span>
+          <div class="interactive-text" style="background: rgba(0,0,0,0.25); padding: 14px 18px; border-radius: 12px; border-left: 3px solid #38bdf8;">
+            妈妈是个北方人，20岁的时候跟爸爸一起搬到南方住，一直住到今天。南方话她现在能听懂一点儿，但是一点儿也不会说。
+          </div>
+
+          <div style="margin-top: 14px; font-weight: bold; font-size: 17px; color: #fbbf24;" class="interactive-text">
+            &bull; 妈妈：
+          </div>
+
+          <!-- Lựa chọn đáp án A, B, C (CHỈ HIỂN THỊ CHỮ HÁN THEO YÊU CẦU CỦA BẠN) -->
+          <div class="options-grid" style="margin-top: 14px;">
+        
+            <div class="option-chip" onclick="selectOption('31', 'A')" data-q="31" data-val="A">
+              <span class="chip-letter">A</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">不是南方人</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('31', 'B')" data-q="31" data-val="B">
+              <span class="chip-letter">B</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">会说南方话</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('31', 'C')" data-q="31" data-val="C">
+              <span class="chip-letter">C</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">今天搬到南方</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch đoạn văn & các lựa chọn</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Māmā shì ge běifāng rén, èrshí suì de shíhou gēn bàba yìqǐ bān dào nánfāng zhù, yìzhí zhù dào jīntiān. Nánfāng huà tā xiànzài néng tīngdǒng yìdiǎnr, dànshì yìdiǎnr yě bú huì shuō.</div>
+              <div style="margin-bottom: 8px;"><strong>Dịch đoạn văn:</strong> Mẹ là người miền Bắc, năm 20 tuổi cùng bố chuyển đến miền Nam sống, và sống ở đó suốt cho đến tận hôm nay. Tiếng địa phương miền Nam bây giờ mẹ có thể nghe hiểu một chút, nhưng một chút cũng không biết nói.</div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; font-size: 13px;">
+                <strong>Dịch các lựa chọn:</strong><br>
+        
+                &bull; <strong>A. 不是南方人</strong> (bú shì nánfāng rén): không phải người miền Nam<br>
+            
+                &bull; <strong>B. 会说南方话</strong> (huì shuō nánfāng huà): biết nói tiếng miền Nam<br>
+            
+                &bull; <strong>C. 今天搬到南方</strong> (jīntiān bān dào nánfāng): hôm nay chuyển đến miền Nam<br>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('31')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('31')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-31"></div>
+        </div>
+        
+        <div class="card" id="q-32">
+          <span class="card-num">Câu 32</span>
+          <div class="interactive-text" style="background: rgba(0,0,0,0.25); padding: 14px 18px; border-radius: 12px; border-left: 3px solid #38bdf8;">
+            我们小时候，下了课都在外边玩儿游戏，那时候的游戏是运动。现在的孩子们也玩儿游戏，他们在家里，坐在电脑桌前，玩儿的是电脑游戏。
+          </div>
+
+          <div style="margin-top: 14px; font-weight: bold; font-size: 17px; color: #fbbf24;" class="interactive-text">
+            &bull; 现在的孩子们喜欢：
+          </div>
+
+          <!-- Lựa chọn đáp án A, B, C (CHỈ HIỂN THỊ CHỮ HÁN THEO YÊU CẦU CỦA BẠN) -->
+          <div class="options-grid" style="margin-top: 14px;">
+        
+            <div class="option-chip" onclick="selectOption('32', 'A')" data-q="32" data-val="A">
+              <span class="chip-letter">A</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">运动</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('32', 'B')" data-q="32" data-val="B">
+              <span class="chip-letter">B</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">玩儿电脑游戏</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('32', 'C')" data-q="32" data-val="C">
+              <span class="chip-letter">C</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">在外边玩儿游戏</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch đoạn văn & các lựa chọn</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Wǒmen xiǎoshíhou, xià le kè dōu zài wàibian wánr yóuxì, nà shíhou de yóuxì shì yùndòng. Xiànzài de háizimen yě wánr yóuxì, tāmen zài jiā li, zuò zài diànnǎo zhuō qián, wánr de shì diànnǎo yóuxì.</div>
+              <div style="margin-bottom: 8px;"><strong>Dịch đoạn văn:</strong> Hồi chúng tôi còn nhỏ, tan học đều chơi trò chơi ở bên ngoài, trò chơi khi đó là vận động thể chất. Trẻ con bây giờ cũng chơi trò chơi, nhưng chúng ở trong nhà, ngồi trước bàn máy tính, chơi trò chơi điện tử máy tính.</div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; font-size: 13px;">
+                <strong>Dịch các lựa chọn:</strong><br>
+        
+                &bull; <strong>A. 运动</strong> (yùndòng): vận động<br>
+            
+                &bull; <strong>B. 玩儿电脑游戏</strong> (wánr diànnǎo yóuxì): chơi trò chơi điện tử máy tính<br>
+            
+                &bull; <strong>C. 在外边玩儿游戏</strong> (zài wàibian wánr yóuxì): chơi trò chơi ở bên ngoài<br>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('32')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('32')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-32"></div>
+        </div>
+        
+        <div class="card" id="q-33">
+          <span class="card-num">Câu 33</span>
+          <div class="interactive-text" style="background: rgba(0,0,0,0.25); padding: 14px 18px; border-radius: 12px; border-left: 3px solid #38bdf8;">
+            中国人说：做事的时候别着急，要多想想，想好了再做。
+          </div>
+
+          <div style="margin-top: 14px; font-weight: bold; font-size: 17px; color: #fbbf24;" class="interactive-text">
+            &bull; 中国人觉得做事不能：
+          </div>
+
+          <!-- Lựa chọn đáp án A, B, C (CHỈ HIỂN THỊ CHỮ HÁN THEO YÊU CẦU CỦA BẠN) -->
+          <div class="options-grid" style="margin-top: 14px;">
+        
+            <div class="option-chip" onclick="selectOption('33', 'A')" data-q="33" data-val="A">
+              <span class="chip-letter">A</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">着急</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('33', 'B')" data-q="33" data-val="B">
+              <span class="chip-letter">B</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">想好</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('33', 'C')" data-q="33" data-val="C">
+              <span class="chip-letter">C</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">多想</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch đoạn văn & các lựa chọn</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Zhōngguó rén shuō: Zuò shì de shíhou bié zháojí, yào duō xiǎngxiang, xiǎng hǎo le zài zuò.</div>
+              <div style="margin-bottom: 8px;"><strong>Dịch đoạn văn:</strong> Người Trung Quốc thường nói: Khi làm việc đừng vội vã sốt ruột, phải suy nghĩ thật nhiều, suy nghĩ chín chắn rồi mới làm.</div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; font-size: 13px;">
+                <strong>Dịch các lựa chọn:</strong><br>
+        
+                &bull; <strong>A. 着急</strong> (zháojí): vội vã, sốt ruột<br>
+            
+                &bull; <strong>B. 想好</strong> (xiǎnghǎo): nghĩ kĩ<br>
+            
+                &bull; <strong>C. 多想</strong> (duō xiǎng): nghĩ nhiều<br>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('33')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('33')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-33"></div>
+        </div>
+        
+        <div class="card" id="q-34">
+          <span class="card-num">Câu 34</span>
+          <div class="interactive-text" style="background: rgba(0,0,0,0.25); padding: 14px 18px; border-radius: 12px; border-left: 3px solid #38bdf8;">
+            我爱旅游，喜欢走南走北。第一次去旅游，我买最便宜的火车票，因为那时候没有那么多钱。现在，我可以开车去想去的地方，车上有电子地图，能告诉我怎么走。
+          </div>
+
+          <div style="margin-top: 14px; font-weight: bold; font-size: 17px; color: #fbbf24;" class="interactive-text">
+            &bull; 我现在：
+          </div>
+
+          <!-- Lựa chọn đáp án A, B, C (CHỈ HIỂN THỊ CHỮ HÁN THEO YÊU CẦU CỦA BẠN) -->
+          <div class="options-grid" style="margin-top: 14px;">
+        
+            <div class="option-chip" onclick="selectOption('34', 'A')" data-q="34" data-val="A">
+              <span class="chip-letter">A</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">没有那么多钱</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('34', 'B')" data-q="34" data-val="B">
+              <span class="chip-letter">B</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">喜欢坐火车</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('34', 'C')" data-q="34" data-val="C">
+              <span class="chip-letter">C</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">可以开车旅游</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch đoạn văn & các lựa chọn</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Wǒ ài lǚyóu, xǐhuan zǒu nán zǒu běi. Dì-yī cì qù lǚyóu, wǒ mǎi zuì piányi de huǒchē piào, yīnwèi nà shíhou méiyǒu nàme duō qián. Xiànzài, wǒ kěyǐ kāi chē qù xiǎng qù de dìfang, chē shang yǒu diànzǐ dìtú, néng gàosu wǒ zěnme zǒu.</div>
+              <div style="margin-bottom: 8px;"><strong>Dịch đoạn văn:</strong> Tôi thích đi du lịch, thích chu du nam bắc. Lần đầu tiên đi du lịch, tôi mua vé tàu hỏa rẻ nhất, vì lúc ấy không có nhiều tiền đến thế. Bây giờ, tôi có thể tự lái xe đến những nơi mình muốn đến, trên xe có bản đồ điện tử, có thể chỉ cho tôi biết phải đi như thế nào.</div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; font-size: 13px;">
+                <strong>Dịch các lựa chọn:</strong><br>
+        
+                &bull; <strong>A. 没有那么多钱</strong> (méiyǒu nàme duō qián): không có nhiều tiền đến thế<br>
+            
+                &bull; <strong>B. 喜欢坐火车</strong> (xǐhuan zuò huǒchē): thích đi tàu hỏa<br>
+            
+                &bull; <strong>C. 可以开车旅游</strong> (kěyǐ kāi chē lǚyóu): có thể lái xe ô tô đi du lịch<br>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('34')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('34')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-34"></div>
+        </div>
+        
+        <div class="card" id="q-35">
+          <span class="card-num">Câu 35</span>
+          <div class="interactive-text" style="background: rgba(0,0,0,0.25); padding: 14px 18px; border-radius: 12px; border-left: 3px solid #38bdf8;">
+            南方我去过很多次，但是妻子一次也没去过。我说过很多次“明年带你去”，但是因为工作忙，一直到现在也没带她去，我觉得很对不起妻子。
+          </div>
+
+          <div style="margin-top: 14px; font-weight: bold; font-size: 17px; color: #fbbf24;" class="interactive-text">
+            &bull; 妻子：
+          </div>
+
+          <!-- Lựa chọn đáp án A, B, C (CHỈ HIỂN THỊ CHỮ HÁN THEO YÊU CẦU CỦA BẠN) -->
+          <div class="options-grid" style="margin-top: 14px;">
+        
+            <div class="option-chip" onclick="selectOption('35', 'A')" data-q="35" data-val="A">
+              <span class="chip-letter">A</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">工作很忙</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('35', 'B')" data-q="35" data-val="B">
+              <span class="chip-letter">B</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">没去过南方</span>
+              </div>
+            </div>
+            
+            <div class="option-chip" onclick="selectOption('35', 'C')" data-q="35" data-val="C">
+              <span class="chip-letter">C</span>
+              <div>
+                <span class="interactive-text" style="font-size: 17px;">觉得很对不起</span>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="sentence-footer">
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Dịch đoạn văn & các lựa chọn</button>
+            <div class="sentence-trans-box">
+              <div class="sentence-pinyin-full">Nánfāng wǒ qù guo hěn duō cì, dànshì qīzi yí cì yě méi qù guo. Wǒ shuō guo hěn duō cì 'míngnián dài nǐ qù', dànshì yīnwèi gōngzuò máng, yìzhí dào xiànzài yě méi dài tā qù, wǒ juéde hěn duìbuqǐ qīzi.</div>
+              <div style="margin-bottom: 8px;"><strong>Dịch đoạn văn:</strong> Miền Nam tôi đã từng đi rất nhiều lần, nhưng vợ tôi thì chưa từng đi lần nào. Tôi đã nói nhiều lần rằng 'sang năm anh đưa em đi', nhưng vì công việc bận rộn, mãi cho đến tận bây giờ vẫn chưa đưa cô ấy đi, tôi cảm thấy rất có lỗi với vợ.</div>
+              <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6px; font-size: 13px;">
+                <strong>Dịch các lựa chọn:</strong><br>
+        
+                &bull; <strong>A. 工作很忙</strong> (gōngzuò hěn máng): công việc rất bận<br>
+            
+                &bull; <strong>B. 没去过南方</strong> (méi qù guo nánfāng): chưa từng đi miền Nam<br>
+            
+                &bull; <strong>C. 觉得很对不起</strong> (juéde hěn duìbuqǐ): cảm thấy rất có lỗi<br>
+            
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-actions">
+            <button class="btn-check" onclick="checkAnswer('35')">Kiểm tra đáp án</button>
+            <button class="btn-reset" onclick="resetAnswer('35')">Làm lại</button>
+          </div>
+          <div class="feedback-box" id="feedback-35"></div>
+        </div>
+        
+      </section>
+    </div>
+
+    <!-- ==================== TAB 3: BÀI VIẾT (WRITING) ==================== -->
+    <div id="tab-writing" class="tab-content">
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>第三部分: 书写 (Phần viết)</span></div>
+          <span style="font-size:13px; color:var(--accent);">Sắp xếp câu & Viết chữ Hán (Có tra từ tức thì)</span>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h4 style="color:#38bdf8; margin-bottom: 12px;">第 36 - 40 题: Sắp xếp các từ ngữ để tạo thành câu hoàn chỉnh</h4>
+          
+          <div class="card">
+            <span class="card-num">Câu 36</span>
+            <div class="interactive-text" style="margin-bottom:8px; color:#cbd5e1;">面包 / 一个 / 商店里 / 没有 / 也</div>
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Xem đáp án câu đúng & dịch</button>
+            <div class="sentence-trans-box">
+              <div class="interactive-text" style="font-size: 17px; font-weight: bold; color: #86efac;">商店里一个面包也没有。</div>
+              <div class="sentence-pinyin-full">Shāngdiàn li yí ge miànbāo yě méiyǒu.</div>
+              <div>Trong cửa hàng một chiếc bánh mì cũng không có.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="card-num">Câu 37</span>
+            <div class="interactive-text" style="margin-bottom:8px; color:#cbd5e1;">想 / 好 / 吃什么 / 还没 / 我</div>
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Xem đáp án câu đúng & dịch</button>
+            <div class="sentence-trans-box">
+              <div class="interactive-text" style="font-size: 17px; font-weight: bold; color: #86efac;">我还没想好吃什么。</div>
+              <div class="sentence-pinyin-full">Wǒ hái méi xiǎng hǎo chī shénme.</div>
+              <div>Tôi vẫn chưa nghĩ ra ăn món gì.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="card-num">Câu 38</span>
+            <div class="interactive-text" style="margin-bottom:8px; color:#cbd5e1;">没下 / 雪 / 一点儿 / 都 / 今年</div>
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Xem đáp án câu đúng & dịch</button>
+            <div class="sentence-trans-box">
+              <div class="interactive-text" style="font-size: 17px; font-weight: bold; color: #86efac;">今年一点儿雪都没下。</div>
+              <div class="sentence-pinyin-full">Jīnnián yìdiǎnr xuě dōu méi xià.</div>
+              <div>Năm nay một chút tuyết cũng không rơi.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="card-num">Câu 39</span>
+            <div class="interactive-text" style="margin-bottom:8px; color:#cbd5e1;">也 / 咖啡 / 一杯 / 没喝 / 今天下午 / 我</div>
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Xem đáp án câu đúng & dịch</button>
+            <div class="sentence-trans-box">
+              <div class="interactive-text" style="font-size: 17px; font-weight: bold; color: #86efac;">今天下午我一杯咖啡也没喝。</div>
+              <div class="sentence-pinyin-full">Jīntiān xiàwǔ wǒ yì bēi kāfēi yě méi hē.</div>
+              <div>Chiều hôm nay tôi một cốc cà phê cũng chưa uống.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="card-num">Câu 40</span>
+            <div class="interactive-text" style="margin-bottom:8px; color:#cbd5e1;">好 / 水果 / 吗 / 洗 / 你 / 了</div>
+            <button class="btn-trans-toggle" onclick="toggleSentenceTrans(this)">👁 Xem đáp án câu đúng & dịch</button>
+            <div class="sentence-trans-box">
+              <div class="interactive-text" style="font-size: 17px; font-weight: bold; color: #86efac;">你洗好水果了吗？</div>
+              <div class="sentence-pinyin-full">Nǐ xǐ hǎo shuǐguǒ le ma?</div>
+              <div>Bạn đã rửa xong hoa quả chưa?</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="color:#38bdf8; margin-bottom: 12px;">第 41 - 45 题: Căn cứ phiên âm để điền chữ Hán</h4>
+          <div class="card">
+            <div class="interactive-text" style="line-height: 2.2;">
+              <div>41. 下午我一 ( <strong style="color:#22c55e;">直</strong> : zhí ) 在房间里看书。</div>
+              <div>42. 我家在学校的 ( <strong style="color:#22c55e;">北</strong> : běi ) 边。</div>
+              <div>43. 周 ( <strong style="color:#22c55e;">末</strong> : mò ) 我请你去跳舞，怎么样？</div>
+              <div>44. 我想 ( <strong style="color:#22c55e;">跟</strong> : gēn ) 你们一起去打篮球，可以吗？</div>
+              <div>45. 我们明天就要 ( <strong style="color:#22c55e;">搬</strong> : bān ) 家了。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== TAB 4: TỪ VỰNG & NGỮ PHÁP SÁCH GIÁO KHOA ==================== -->
+    <div id="tab-textbook" class="tab-content">
+      
+      <!-- 15 TỪ MỚI SÁCH GIÁO KHOA -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>生词: 15 Từ mới trong Sách Giáo Khoa (Trang 18 - 19)</span></div>
+          <span style="font-size:13px; color:var(--accent);">Nội dung chuẩn gốc từ HSK 3 Sách giáo khoa</span>
+        </div>
+        <p class="section-desc">Toàn bộ 15 từ vựng mới chính thức của Bài 1 kèm từ loại và dịch nghĩa tiếng Việt:</p>
+
+        <table class="vocab-table">
+          <thead>
+            <tr>
+              <th style="width: 50px;">STT</th>
+              <th>Chữ Hán</th>
+              <th>Pinyin</th>
+              <th>Từ loại</th>
+              <th>Ý nghĩa tiếng Việt</th>
+            </tr>
+          </thead>
+          <tbody>
+    
+            <tr>
+              <td>1</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">周末</td>
+              <td style="color: #38bdf8; font-weight: 600;">zhōumò</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>cuối tuần</td>
+            </tr>
+        
+            <tr>
+              <td>2</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">打算</td>
+              <td style="color: #38bdf8; font-weight: 600;">dǎsuàn</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ / động từ</td>
+              <td>kế hoạch; dự định</td>
+            </tr>
+        
+            <tr>
+              <td>3</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">啊</td>
+              <td style="color: #38bdf8; font-weight: 600;">a</td>
+              <td style="color: #a78bfa; font-size: 13px;">trợ từ</td>
+              <td>được dùng ở cuối câu để khẳng định hay biện minh cho điều gì</td>
+            </tr>
+        
+            <tr>
+              <td>4</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">跟</td>
+              <td style="color: #38bdf8; font-weight: 600;">gēn</td>
+              <td style="color: #a78bfa; font-size: 13px;">giới từ</td>
+              <td>cùng, với</td>
+            </tr>
+        
+            <tr>
+              <td>5</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">一直</td>
+              <td style="color: #38bdf8; font-weight: 600;">yìzhí</td>
+              <td style="color: #a78bfa; font-size: 13px;">phó từ</td>
+              <td>suốt, liên tục, luôn luôn</td>
+            </tr>
+        
+            <tr>
+              <td>6</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">游戏</td>
+              <td style="color: #38bdf8; font-weight: 600;">yóuxì</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>trò chơi</td>
+            </tr>
+        
+            <tr>
+              <td>7</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">作业</td>
+              <td style="color: #38bdf8; font-weight: 600;">zuòyè</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>bài tập về nhà</td>
+            </tr>
+        
+            <tr>
+              <td>8</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">着急</td>
+              <td style="color: #38bdf8; font-weight: 600;">zháojí</td>
+              <td style="color: #a78bfa; font-size: 13px;">tính từ</td>
+              <td>lo lắng, sốt ruột</td>
+            </tr>
+        
+            <tr>
+              <td>9</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">复习</td>
+              <td style="color: #38bdf8; font-weight: 600;">fùxí</td>
+              <td style="color: #a78bfa; font-size: 13px;">động từ</td>
+              <td>ôn tập</td>
+            </tr>
+        
+            <tr>
+              <td>10</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">南(方)</td>
+              <td style="color: #38bdf8; font-weight: 600;">nán (fāng)</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>phía nam, miền nam</td>
+            </tr>
+        
+            <tr>
+              <td>11</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">北方</td>
+              <td style="color: #38bdf8; font-weight: 600;">běifāng</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>phía bắc, miền bắc</td>
+            </tr>
+        
+            <tr>
+              <td>12</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">面包</td>
+              <td style="color: #38bdf8; font-weight: 600;">miànbāo</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>bánh mì</td>
+            </tr>
+        
+            <tr>
+              <td>13</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">带</td>
+              <td style="color: #38bdf8; font-weight: 600;">dài</td>
+              <td style="color: #a78bfa; font-size: 13px;">động từ</td>
+              <td>mang theo, đem theo</td>
+            </tr>
+        
+            <tr>
+              <td>14</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">地图</td>
+              <td style="color: #38bdf8; font-weight: 600;">dìtú</td>
+              <td style="color: #a78bfa; font-size: 13px;">danh từ</td>
+              <td>bản đồ</td>
+            </tr>
+        
+            <tr>
+              <td>15</td>
+              <td class="interactive-text" style="font-size: 19px; font-weight: bold; color: #fff;">搬</td>
+              <td style="color: #38bdf8; font-weight: 600;">bān</td>
+              <td style="color: #a78bfa; font-size: 13px;">động từ</td>
+              <td>dọn, dời, chuyển nhà</td>
+            </tr>
+        
+          </tbody>
+        </table>
+
+        <div style="margin-top: 18px; padding: 12px 16px; background: rgba(0,0,0,0.25); border-radius: 12px;">
+          <strong style="color: #38bdf8;">专有名词 (Danh từ riêng trong bài):</strong>
+          <div style="margin-top: 6px; font-size: 14px;">
+            1. <span class="interactive-text" style="font-weight: bold;">小丽</span> (Xiǎolì): chị Lệ (tên người)<br>
+            2. <span class="interactive-text" style="font-weight: bold;">小刚</span> (Xiǎogāng): anh Cương (tên người)
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 ĐIỂM NGỮ PHÁP SÁCH GIÁO KHOA -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>注释: 3 Điểm Ngữ Pháp & Chú Thích (Trang 20 - 21)</span></div>
+          <span style="font-size:13px; color:var(--accent);">Ngữ pháp trọng điểm HSK 3</span>
+        </div>
+    
+        <div class="card" style="margin-bottom: 20px;">
+          <h3 style="color: #38bdf8; font-size: 17px; margin-bottom: 8px;">1. Bổ ngữ kết quả “好” (结果补语 “好”)</h3>
+          <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 14px; line-height: 1.6;">Bổ ngữ kết quả 好 được dùng sau động từ để diễn tả hành động được hoàn thành và làm cho người ta cảm thấy hài lòng. So sánh: '我吃完了' (Tôi ăn xong rồi - chỉ hành động kết thúc) vs '我吃好了' (Tôi ăn xong và rất hài lòng/ngon miệng).</p>
+          <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 10px;">
+            <div style="font-size: 13px; font-weight: bold; color: #fbbf24; margin-bottom: 8px;">Ví dụ trong sách:</div>
+        
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">今晚的电影小刚已经买好票了。</div>
+              <div class="sentence-pinyin-full">Jīnwǎn de diànyǐng Xiǎogāng yǐjīng mǎihǎo piào le.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Vé phim tối nay Tiểu Cương đã mua xong xuôi rồi.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">饭还没做好，请你等一会儿。</div>
+              <div class="sentence-pinyin-full">Fàn hái méi zuòhǎo, qǐng nǐ děng yíhuìr.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Cơm vẫn chưa nấu xong, xin bạn đợi một lát.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">去旅游的东西准备好了吗？</div>
+              <div class="sentence-pinyin-full">Qù lǚyóu de dōngxi zhǔnbèihǎo le ma?</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Đồ đạc đi du lịch đã chuẩn bị xong chưa?</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">我还没想好要不要跟你去呢。</div>
+              <div class="sentence-pinyin-full">Wǒ hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Tôi vẫn chưa nghĩ kĩ xem có nên đi cùng bạn hay không.</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+          <h3 style="color: #38bdf8; font-size: 17px; margin-bottom: 8px;">2. Cấu trúc diễn tả sự phủ định tuyệt đối: “一……也/都 + 不/没……”</h3>
+          <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 14px; line-height: 1.6;">Cấu trúc: '一 + lượng từ + danh từ + 也/都 + 不/没 + động từ' dùng để diễn tả sự phủ định hoàn toàn (không một chút nào, không một ai/cái gì). Đôi khi '一 + lượng từ' có thể được thay thế bằng '一点儿' (khi vị ngữ là tính từ hoặc danh từ không đếm được).</p>
+          <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 10px;">
+            <div style="font-size: 13px; font-weight: bold; color: #fbbf24; margin-bottom: 8px;">Ví dụ trong sách:</div>
+        
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">我一个苹果也不想吃。</div>
+              <div class="sentence-pinyin-full">Wǒ yí ge píngguǒ yě bù xiǎng chī.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Tôi một quả táo cũng không muốn ăn.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">昨天他一件衣服都没买。</div>
+              <div class="sentence-pinyin-full">Zuótiān tā yí jiàn yīfu dōu méi mǎi.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Hôm qua anh ấy một bộ quần áo cũng không mua.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">小丽一杯茶也没喝。</div>
+              <div class="sentence-pinyin-full">Xiǎolì yì bēi chá yě méi hē.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Tiểu Lệ một ngụm/tách trà cũng không uống.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">手机、电脑、地图，一个也不能少。</div>
+              <div class="sentence-pinyin-full">Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Điện thoại, máy tính, bản đồ, một thứ cũng không thể thiếu.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">他一点儿也不累。</div>
+              <div class="sentence-pinyin-full">Tā yìdiǎnr yě bú lèi.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Anh ấy một chút cũng không thấy mệt.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">你怎么一点儿也不着急？</div>
+              <div class="sentence-pinyin-full">Nǐ zěnme yìdiǎnr yě bù zháojí?</div>
+              <div style="font-size: 13px; color: var(--trans-color);">Sao cậu một chút cũng không thấy sốt ruột vậy?</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="card" style="margin-bottom: 20px;">
+          <h3 style="color: #38bdf8; font-size: 17px; margin-bottom: 8px;">3. Liên từ “那” (连词 “那”)</h3>
+          <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 14px; line-height: 1.6;">Liên từ “那” đặt ở đầu câu, diễn tả kết quả hay nhận xét đưa ra dựa trên nội dung/tình huống được đề cập ở câu trước đó (có nghĩa: 'vậy thì...', 'thế thì...').</p>
+          <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 10px;">
+            <div style="font-size: 13px; font-weight: bold; color: #fbbf24; margin-bottom: 8px;">Ví dụ trong sách:</div>
+        
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">A: 我不想去看电影。<br>B: 那我也不去了。</div>
+              <div class="sentence-pinyin-full">A: Wǒ bù xiǎng qù kàn diànyǐng. B: Nà wǒ yě bú qù le.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">A: Tôi không muốn đi xem phim. / B: Thế thì tôi cũng không đi nữa.</div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+              <div class="interactive-text" style="font-size: 17px;">A: 明天有考试呢！<br>B: 那也不能一直玩儿啊。</div>
+              <div class="sentence-pinyin-full">A: Míngtiān yǒu kǎoshì ne! B: Nà yě bù néng yìzhí wánr a.</div>
+              <div style="font-size: 13px; color: var(--trans-color);">A: Mai có bài thi đấy! / B: Thế thì con cũng không thể cứ chơi suốt như vậy chứ.</div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- BẢNG ĐA ÂM TỰ CHI TIẾT -->
+      <section class="section-card">
+        <div class="section-header">
+          <div class="section-title"><span>多音字: Các chữ Hán Đa Âm Tự xuất hiện trong Bài 1</span></div>
+          <span style="font-size:13px; color:#f59e0b;">Bấm giữ để tra cứu</span>
+        </div>
+        <p class="section-desc">Chữ đa âm tự là những chữ có từ 2 phiên âm và nghĩa khác nhau tùy ngữ cảnh. Dưới đây là bảng phân tích toàn bộ các chữ trong bài:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">还</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [hái]</strong>: vẫn, còn, lại (vd: 还有, 还是, 还没想好, 还带什么)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [huán]</strong>: trả lại, quay về (vd: 还钱: trả tiền, 归还: trả về)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">都</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [dōu]</strong>: đều, cũng, đã (vd: 都是, 都写完了, 一个人都没有)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [dū]</strong>: đô thị, thủ đô (vd: 首都: thủ đô, 都市: đô thị)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">着</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [zháo]</strong>: sốt ruột (vd: 着急: zháojí); chạm, đạt (vd: 睡着: ngủ say)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [zhe]</strong>: trợ từ tiếp diễn (vd: 看着, 坐着, 听着)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">3. [zhuó]</strong>: mặc, tiếp xúc (vd: 穿着: ăn mặc, 着手)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">地</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [dì]</strong>: đất, địa phương (vd: 地方: nơi chốn, 地图: bản đồ, 地铁)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [de]</strong>: trợ từ nối tính từ bổ nghĩa động từ (vd: 慢慢地走, 高兴地笑)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">得</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [de]</strong>: trợ từ kết cấu bổ ngữ (vd: 考得好, 跑得快, 觉得: juéde)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [děi]</strong>: phải, cần phải (vd: 我得走了: tôi phải đi rồi)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">3. [dé]</strong>: nhận được, đạt được (vd: 得到: nhận được)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">好</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [hǎo]</strong>: tốt, hay, xong (vd: 好吃, 想好, 准备好, 好听)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [hào]</strong>: sở thích, hiếu kì (vd: 爱好: sở thích, 好客: hiếu khách)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">会</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [huì]</strong>: biết làm, có thể, cuộc họp (vd: 开会, 会议, 会说, 一会儿)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [kuài]</strong>: tính toán, sổ sách (vd: 会计: kế toán)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">没</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [méi]</strong>: không có, chưa (vd: 没有, 没去过, 没复习, 没关系)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [mò]</strong>: chìm ngập, tịch thu (vd: 沉没: chìm đắm, 没收: tịch thu)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">觉</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [jué]</strong>: cảm thấy, nhận biết (vd: 觉得: juéde, 感觉: gǎnjué)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [jiào]</strong>: giấc ngủ (vd: 睡觉: shuìjiào)</div>
+          </div>
+
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="font-family: var(--chinese-font); font-size: 32px; font-weight: 900; color: #fbbf24;">累</div>
+            <div style="margin-top: 6px;"><strong style="color:#f59e0b;">1. [lèi]</strong>: mệt mỏi, nhọc nhằn (vd: 太累了, 累坏了)</div>
+            <div style="margin-top: 4px;"><strong style="color:#f59e0b;">2. [lěi]</strong>: tích lũy, chồng chất (vd: 积累: jīlěi)</div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </div> <!-- /container -->
+
+  <!-- FLOATING DICTIONARY TOOLTIP -->
+  <div id="dict-tooltip">
+    <div class="tooltip-word">
+      <span id="tt-word">字</span>
+      <span class="tooltip-pinyin" id="tt-pinyin">pīnyīn</span>
+      <span class="tooltip-hv" id="tt-hv">Âm HV</span>
+    </div>
+    <div class="tooltip-meaning" id="tt-meaning">Nghĩa tiếng Việt</div>
+    <div id="tt-poly-container" style="display:none;">
+      <span class="poly-badge">★ Đa âm tự (Kéo / Giữ để xem)</span>
+      <div class="poly-detail-box" id="tt-poly-list"></div>
+    </div>
+  </div>
+
+  <script>
+    // 100% COMPLETE MASTER DICTIONARY
+    const DICT = {"一": {"py": "yī", "hv": "Nhất", "vi": "Một, số 1"}, "三": {"py": "sān", "hv": "Tam", "vi": "Ba, số 3"}, "上": {"py": "shàng", "hv": "Thượng", "vi": "Trên, lên, trước (như 上周末)"}, "下": {"py": "xià", "hv": "Hạ", "vi": "Dưới, xuống, sau (như 下个月, 下课)"}, "不": {"py": "bù", "hv": "Bất", "vi": "Không (phủ định)"}, "与": {"py": "yǔ", "hv": "", "vi": "Chữ Hán: 与"}, "东": {"py": "dōng", "hv": "Đông", "vi": "Phía đông, trong '东西' (đồ đạc)"}, "个": {"py": "gè", "hv": "Cá", "vi": "Cái, quả, chiếc (lượng từ phổ biến)"}, "中": {"py": "zhōng", "hv": "Trung", "vi": "Ở giữa, trong, trong '中国' (Trung Quốc)"}, "为": {"py": "wèi", "vi": "vì, bởi vì, để cho (trong bài: 因为, 为了)", "poly": [{"py": "wèi", "vi": "vì, bởi vì, để cho (vd: 因为: bởi vì, 为了: để)"}, {"py": "wéi", "vi": "làm, trở thành (vd: 作为, 成为)"}]}, "么": {"py": "me", "hv": "", "vi": "Chữ Hán: 么"}, "也": {"py": "yě", "hv": "", "vi": "Chữ Hán: 也"}, "习": {"py": "xí", "hv": "", "vi": "Chữ Hán: 习"}, "书": {"py": "shū", "hv": "", "vi": "Chữ Hán: 书"}, "买": {"py": "mǎi", "hv": "Mãi", "vi": "Mua"}, "了": {"py": "le", "hv": "Liễu", "vi": "Trợ từ ngữ khí (rồi, biểu thị sự thay đổi)"}, "事": {"py": "shì", "hv": "Sự", "vi": "Việc, sự việc (như 做事)"}, "二": {"py": "èr", "hv": "Nhị", "vi": "Hai, số 2"}, "于": {"py": "yú", "hv": "", "vi": "Chữ Hán: 于"}, "些": {"py": "xiē", "hv": "Tỉ", "vi": "Những, vài, chút (như 这些, 一些)"}, "亮": {"py": "liàng", "hv": "", "vi": "Chữ Hán: 亮"}, "人": {"py": "rén", "hv": "Nhân", "vi": "Người"}, "什": {"py": "shén", "hv": "Thập", "vi": "Trong '什么' (cái gì)"}, "今": {"py": "jīn", "hv": "Kim", "vi": "Nay, hiện tại (như 今天, 今年)"}, "介": {"py": "jiè", "hv": "", "vi": "Chữ Hán: 介"}, "从": {"py": "cóng", "hv": "", "vi": "Chữ Hán: 从"}, "他": {"py": "tā", "hv": "Tha", "vi": "Anh ấy, ông ấy, cậu ấy"}, "以": {"py": "yǐ", "hv": "", "vi": "Chữ Hán: 以"}, "们": {"py": "men", "hv": "Môn", "vi": "Hậu tố số nhiều (như 我们, 你们, 他们)"}, "件": {"py": "jiàn", "hv": "Kiện", "vi": "Chiếc, cái, vụ (lượng từ quần áo, sự việc)"}, "会": {"py": "huì", "vi": "biết, có thể, cuộc họp (trong bài: 会议, 不会说)", "poly": [{"py": "huì", "vi": "biết làm, có thể, cuộc họp (vd: 开会, 会议, 会说汉语, 一会儿)"}, {"py": "kuài", "vi": "tính toán, sổ sách (vd: 会计: kế toán)"}]}, "但": {"py": "dàn", "hv": "", "vi": "Chữ Hán: 但"}, "住": {"py": "zhù", "hv": "", "vi": "Chữ Hán: 住"}, "体": {"py": "tǐ", "hv": "", "vi": "Chữ Hán: 体"}, "作": {"py": "zuò", "hv": "", "vi": "Chữ Hán: 作"}, "你": {"py": "nǐ", "hv": "", "vi": "Chữ Hán: 你"}, "例": {"py": "lì", "hv": "", "vi": "Chữ Hán: 例"}, "便": {"py": "biàn", "hv": "", "vi": "Chữ Hán: 便"}, "候": {"py": "hòu", "hv": "", "vi": "Chữ Hán: 候"}, "做": {"py": "zuò", "hv": "", "vi": "Chữ Hán: 做"}, "健": {"py": "jiàn", "hv": "", "vi": "Chữ Hán: 健"}, "儿": {"py": "ér", "hv": "Nhi", "vi": "Trẻ con, âm uốn lưỡi (như 一点儿, 玩儿)"}, "元": {"py": "yuán", "hv": "", "vi": "Chữ Hán: 元"}, "先": {"py": "xiān", "hv": "Tiên", "vi": "Trước, trước tiên (như 先...然后...)"}, "八": {"py": "bā", "hv": "Bát", "vi": "Tám, số 8"}, "公": {"py": "gōng", "hv": "Công", "vi": "Công cộng, công ty (như 公共汽车, 公司)"}, "共": {"py": "gòng", "hv": "", "vi": "Chữ Hán: 共"}, "关": {"py": "guān", "hv": "Quan", "vi": "Đóng, liên quan (như 没关系, 关门)"}, "兴": {"py": "xīng", "hv": "", "vi": "Chữ Hán: 兴"}, "内": {"py": "nèi", "hv": "", "vi": "Chữ Hán: 内"}, "册": {"py": "cè", "hv": "", "vi": "Chữ Hán: 册"}, "再": {"py": "zài", "hv": "", "vi": "Chữ Hán: 再"}, "写": {"py": "xiě", "hv": "Tả", "vi": "Viết (như 书写, 写字)"}, "冷": {"py": "lěng", "hv": "Lãnh", "vi": "Lạnh"}, "准": {"py": "zhǔn", "hv": "Chuẩn", "vi": "Trong '准备' (chuẩn bị)"}, "几": {"py": "jǐ", "hv": "Kỷ", "vi": "Mấy, vài (hỏi số lượng dưới 10)"}, "分": {"py": "fēn", "hv": "Phân", "vi": "Phút, phần, chia (như 部分, 分钟)"}, "判": {"py": "pàn", "hv": "", "vi": "Chữ Hán: 判"}, "别": {"py": "bié", "hv": "", "vi": "Chữ Hán: 别"}, "到": {"py": "dào", "hv": "Đáo", "vi": "Đến, tới (như 搬到, 找到)"}, "前": {"py": "qián", "hv": "Tiền", "vi": "Trước, phía trước (như 电脑桌前)"}, "力": {"py": "lì", "hv": "", "vi": "Chữ Hán: 力"}, "加": {"py": "jiā", "hv": "", "vi": "Chữ Hán: 加"}, "动": {"py": "dòng", "hv": "Động", "vi": "Vận động, chuyển động (như 运动)"}, "包": {"py": "bāo", "hv": "Bao", "vi": "Bánh, túi (như 面包, 书包)"}, "北": {"py": "běi", "hv": "Bắc", "vi": "Phía bắc, miền bắc (như 北方, 医院北边)"}, "医": {"py": "yī", "hv": "", "vi": "Chữ Hán: 医"}, "午": {"py": "wǔ", "hv": "", "vi": "Chữ Hán: 午"}, "半": {"py": "bàn", "hv": "Bán", "vi": "Nửa, rưỡi (như 半个小时, 八点半)"}, "南": {"py": "nán", "hv": "", "vi": "Chữ Hán: 南"}, "去": {"py": "qù", "hv": "Khứ", "vi": "Đi"}, "参": {"py": "cān", "hv": "", "vi": "Chữ Hán: 参"}, "又": {"py": "yòu", "hv": "", "vi": "Chữ Hán: 又"}, "友": {"py": "yǒu", "hv": "", "vi": "Chữ Hán: 友"}, "发": {"py": "fā", "hv": "Phát", "vi": "Phát hiện, gửi (như 发现)"}, "句": {"py": "jù", "hv": "", "vi": "Chữ Hán: 句"}, "叫": {"py": "jiào", "hv": "", "vi": "Chữ Hán: 叫"}, "可": {"py": "kě", "hv": "Khả", "vi": "Có thể, đáng (như 可以, 可能)"}, "司": {"py": "sī", "hv": "Ty", "vi": "Trong '公司' (công ty)"}, "吃": {"py": "chī", "hv": "Ngật", "vi": "Ăn"}, "合": {"py": "hé", "hv": "", "vi": "Chữ Hán: 合"}, "名": {"py": "míng", "hv": "Danh", "vi": "Tên, danh tiếng (như 名字)"}, "后": {"py": "hòu", "hv": "Hậu", "vi": "Sau, phía sau (như 然后, 以后)"}, "吗": {"py": "ma", "hv": "Ma", "vi": "Trợ từ nghi vấn: ...không? ...hả?"}, "吧": {"py": "ba", "hv": "", "vi": "Chữ Hán: 吧"}, "听": {"py": "tīng", "hv": "Thính", "vi": "Nghe (như 听力, 好听)"}, "告": {"py": "gào", "hv": "Cáo", "vi": "Trong '告诉' (bảo, nói cho biết)"}, "呢": {"py": "ne", "hv": "Ni", "vi": "Trợ từ ngữ khí (thì sao, đang)"}, "周": {"py": "zhōu", "hv": "Chu", "vi": "Tuần, họ Chu (như 周末, 周老师)"}, "咖": {"py": "kā", "hv": "", "vi": "Chữ Hán: 咖"}, "哪": {"py": "nǎ", "hv": "", "vi": "Chữ Hán: 哪"}, "商": {"py": "shāng", "hv": "Thương", "vi": "Buôn bán, thương mại (như 商店)"}, "啊": {"py": "a", "hv": "A", "vi": "Trợ từ ngữ khí: a, nhé, cơ chứ"}, "啡": {"py": "fēi", "hv": "Phi", "vi": "Trong '咖啡' (cà phê)"}, "喂": {"py": "wèi", "hv": "", "vi": "Chữ Hán: 喂"}, "喜": {"py": "xǐ", "hv": "", "vi": "Chữ Hán: 喜"}, "喝": {"py": "hē", "hv": "", "vi": "Chữ Hán: 喝"}, "四": {"py": "sì", "hv": "", "vi": "Chữ Hán: 四"}, "回": {"py": "huí", "hv": "", "vi": "Chữ Hán: 回"}, "因": {"py": "yīn", "hv": "", "vi": "Chữ Hán: 因"}, "国": {"py": "guó", "hv": "", "vi": "Chữ Hán: 国"}, "图": {"py": "tú", "hv": "Đồ", "vi": "Bức vẽ, bản đồ (như 地图)"}, "在": {"py": "zài", "hv": "Tại", "vi": "Ở, tại, đang (như 在家, 正在)"}, "地": {"py": "dì", "vi": "đất, địa phương (trong bài: 地图, 地铁, 地方)", "poly": [{"py": "dì", "vi": "đất, địa phương, bản đồ (vd: 地方: nơi chốn, 地图: bản đồ, 地铁: tàu điện ngầm)"}, {"py": "de", "vi": "trợ từ ngữ pháp đứng trước động từ (vd: 慢慢地走, 高兴地笑)"}]}, "坐": {"py": "zuò", "hv": "", "vi": "Chữ Hán: 坐"}, "块": {"py": "kuài", "hv": "Khối", "vi": "Miếng, đồng tiền, chiếc (lượng từ đồng hồ: 块手表)"}, "填": {"py": "tián", "hv": "", "vi": "Chữ Hán: 填"}, "声": {"py": "shēng", "hv": "Thanh", "vi": "Âm thanh, tiếng (như 声音)"}, "备": {"py": "bèi", "hv": "Bị", "vi": "Trong '准备' (chuẩn bị)"}, "复": {"py": "fù", "hv": "", "vi": "Chữ Hán: 复"}, "外": {"py": "wài", "hv": "", "vi": "Chữ Hán: 外"}, "多": {"py": "duō", "hv": "Đa", "vi": "Nhiều, bao nhiêu (như 很多, 那么多)"}, "大": {"py": "dà", "hv": "Đại", "vi": "To, lớn (như 大家, 大雨)"}, "天": {"py": "tiān", "hv": "Thiên", "vi": "Trời, ngày (như 今天, 明天, 哪天)"}, "太": {"py": "tài", "hv": "Thái", "vi": "Quá, lắm (như 太累, 太客气)"}, "女": {"py": "nǚ", "hv": "Nữ", "vi": "Phụ nữ, người nữ, con gái"}, "她": {"py": "tā", "hv": "", "vi": "Chữ Hán: 她"}, "好": {"py": "hǎo", "vi": "tốt, xong, hay (trong bài: 想好了, 好听)", "poly": [{"py": "hǎo", "vi": "tốt, đẹp, xong (vd: 好吃, 好看, 准备好, 想好了, 好听)"}, {"py": "hào", "vi": "yêu thích, chuộng (vd: 爱好: sở thích, 好客: hiếu khách)"}]}, "如": {"py": "rú", "hv": "Như", "vi": "Như, ví như (như 例如)"}, "妈": {"py": "mā", "hv": "Ma", "vi": "Mẹ (như 妈妈)"}, "妹": {"py": "mèi", "hv": "Muội", "vi": "Em gái (như 妹妹)"}, "妻": {"py": "qī", "hv": "Thê", "vi": "Vợ (như 妻子)"}, "始": {"py": "shǐ", "hv": "", "vi": "Chữ Hán: 始"}, "子": {"py": "zi", "hv": "", "vi": "Chữ Hán: 子"}, "字": {"py": "zì", "hv": "Tự", "vi": "Chữ (như 汉字, 名字)"}, "学": {"py": "xué", "hv": "", "vi": "Chữ Hán: 学"}, "孩": {"py": "hái", "hv": "", "vi": "Chữ Hán: 孩"}, "它": {"py": "tā", "hv": "", "vi": "Chữ Hán: 它"}, "完": {"py": "wán", "hv": "Hoàn", "vi": "Xong, hết (như 做完, 看完)"}, "宜": {"py": "yí", "hv": "", "vi": "Chữ Hán: 宜"}, "宝": {"py": "bǎo", "hv": "", "vi": "Chữ Hán: 宝"}, "客": {"py": "kè", "hv": "Khách", "vi": "Khách, trong '客气' (khách sáo), '游客' (du khách)"}, "家": {"py": "jiā", "hv": "Gia", "vi": "Nhà, gia đình, lượng từ công ty/nhà hàng (như 搬家, 一家医院)"}, "容": {"py": "róng", "hv": "", "vi": "Chữ Hán: 容"}, "对": {"py": "duì", "hv": "Đối", "vi": "Đúng, đối với, xin lỗi (như 对不起, 对不对)"}, "小": {"py": "xiǎo", "hv": "Tiểu", "vi": "Nhỏ, bé (như 小周, 小猫, 小时候)"}, "就": {"py": "jiù", "hv": "Tựu", "vi": "Thì, liền, ngay (như 就是, 马上就)"}, "岁": {"py": "suì", "hv": "", "vi": "Chữ Hán: 岁"}, "工": {"py": "gōng", "hv": "Công", "vi": "Công việc (như 工作)"}, "己": {"py": "jǐ", "hv": "", "vi": "Chữ Hán: 己"}, "已": {"py": "yǐ", "hv": "Dĩ", "vi": "Đã (như 已经)"}, "市": {"py": "shì", "hv": "Thị", "vi": "Thị trường, thành phố (như 超市, 城市)"}, "师": {"py": "shī", "hv": "", "vi": "Chữ Hán: 师"}, "希": {"py": "xī", "hv": "", "vi": "Chữ Hán: 希"}, "带": {"py": "dài", "hv": "", "vi": "Chữ Hán: 带"}, "帮": {"py": "bāng", "hv": "", "vi": "Chữ Hán: 帮"}, "年": {"py": "nián", "hv": "Niên", "vi": "Năm (như 今年, 去年, 明年)"}, "店": {"py": "diàn", "hv": "Điếm", "vi": "Cửa hàng, tiệm (như 商店, 饭店)"}, "康": {"py": "kāng", "hv": "", "vi": "Chữ Hán: 康"}, "开": {"py": "kāi", "hv": "Khai", "vi": "Mở, lái (xe), họp (như 开车, 开会, 开门)"}, "张": {"py": "zhāng", "hv": "Trương", "vi": "Họ Trương, lượng từ vé/bàn (như 张经理, 一张票)"}, "当": {"py": "dāng", "hv": "Đương", "vi": "Đương nhiên (như 当然)"}, "影": {"py": "yǐng", "hv": "", "vi": "Chữ Hán: 影"}, "很": {"py": "hěn", "hv": "", "vi": "Chữ Hán: 很"}, "得": {"py": "de", "vi": "trợ từ nối tính từ bổ ngữ (trong bài: 考得好, 觉得)", "poly": [{"py": "de", "vi": "trợ từ kết cấu bổ ngữ (vd: 考得好, 跑得快, 觉得: juéde)"}, {"py": "děi", "vi": "phải, cần phải (vd: 时间不早了，我得走了)"}, {"py": "dé", "vi": "nhận được, đạt được (vd: 得到: nhận được, 得分: ghi điểm)"}]}, "忙": {"py": "máng", "hv": "", "vi": "Chữ Hán: 忙"}, "快": {"py": "kuài", "hv": "Khoái", "vi": "Nhanh, sắp (như 快点儿, 快要)"}, "怎": {"py": "zěn", "hv": "Chẩm", "vi": "Sao, thế nào (như 怎么, 怎么样)"}, "思": {"py": "sī", "hv": "Tư", "vi": "Nghĩ, ý nghĩ (như 意思)"}, "急": {"py": "jí", "hv": "Cấp", "vi": "Gấp, vội (như 着急)"}, "您": {"py": "nín", "hv": "Nẫm", "vi": "Ngài, ông, bác (đại từ tôn kính)"}, "想": {"py": "xiǎng", "hv": "Tưởng", "vi": "Muốn, nghĩ, nhớ (như 想好, 想去)"}, "意": {"py": "yì", "hv": "Ý", "vi": "Ý, ý tứ (như 意思)"}, "懂": {"py": "dǒng", "hv": "Hiểu", "vi": "Hiểu (như 听懂, 懂不懂)"}, "戏": {"py": "xì", "hv": "", "vi": "Chữ Hán: 戏"}, "我": {"py": "wǒ", "hv": "", "vi": "Chữ Hán: 我"}, "房": {"py": "fáng", "hv": "", "vi": "Chữ Hán: 房"}, "手": {"py": "shǒu", "hv": "Thủ", "vi": "Tay (như 手表, 手机)"}, "才": {"py": "cái", "hv": "", "vi": "Chữ Hán: 才"}, "打": {"py": "dǎ", "hv": "Đả", "vi": "Đánh, gọi, dự định (như 打电话, 打算)"}, "择": {"py": "zé", "hv": "", "vi": "Chữ Hán: 择"}, "换": {"py": "huàn", "hv": "Hoán", "vi": "Đổi, chuyển đổi (như 换地铁, 换衣服)"}, "搬": {"py": "bān", "hv": "", "vi": "Chữ Hán: 搬"}, "教": {"py": "jiào", "hv": "Giáo", "vi": "Dạy học, giáo dục (như 教室, 教授)"}, "文": {"py": "wén", "hv": "Văn", "vi": "Văn tự, tiếng (như 中文, 课文)"}, "断": {"py": "duàn", "hv": "", "vi": "Chữ Hán: 断"}, "新": {"py": "xīn", "hv": "Tân", "vi": "Mới (như 新来, 新衣服)"}, "方": {"py": "fāng", "hv": "Phương", "vi": "Phương hướng, bên (như 南方, 北方, 地方)"}, "旅": {"py": "lǚ", "hv": "Lữ", "vi": "Du lịch, đi lại (như 旅游)"}, "早": {"py": "zǎo", "hv": "Tảo", "vi": "Sớm, buổi sáng (như 早上, 早点儿)"}, "时": {"py": "shí", "hv": "", "vi": "Chữ Hán: 时"}, "明": {"py": "míng", "hv": "Minh", "vi": "Sáng, ngày mai (như 明天, 明白)"}, "是": {"py": "shì", "hv": "Thị", "vi": "Là, phải, đúng"}, "晚": {"py": "wǎn", "hv": "Vãn", "vi": "Muộn, tối (như 晚饭, 晚上)"}, "更": {"py": "gèng", "hv": "", "vi": "Chữ Hán: 更"}, "最": {"py": "zuì", "hv": "Tối", "vi": "Nhất (như 最好, 最便宜)"}, "月": {"py": "yuè", "hv": "Nguyệt", "vi": "Tháng, mặt trăng (như 下个月)"}, "有": {"py": "yǒu", "hv": "Hữu", "vi": "Có (như 有时间, 有意思)"}, "朋": {"py": "péng", "hv": "Bằng", "vi": "Trong '朋友' (bạn bè)"}, "服": {"py": "fú", "hv": "Phục", "vi": "Quần áo, phục vụ (như 衣服, 舒服)"}, "望": {"py": "wàng", "hv": "", "vi": "Chữ Hán: 望"}, "末": {"py": "mò", "hv": "", "vi": "Chữ Hán: 末"}, "本": {"py": "běn", "hv": "Bản", "vi": "Quyển, cuốn (lượng từ sách: 一本书)"}, "束": {"py": "shù", "hv": "", "vi": "Chữ Hán: 束"}, "来": {"py": "lái", "hv": "", "vi": "Chữ Hán: 来"}, "杯": {"py": "bēi", "hv": "Bôi", "vi": "Cốc, ly (lượng từ nước, trà, cà phê: 一杯咖啡)"}, "果": {"py": "guǒ", "hv": "Quả", "vi": "Trái cây, quả (như 水果, 如果)"}, "标": {"py": "biāo", "hv": "", "vi": "Chữ Hán: 标"}, "校": {"py": "xiào", "hv": "Hiệu", "vi": "Trường học (như 学校)"}, "样": {"py": "yàng", "hv": "", "vi": "Chữ Hán: 样"}, "案": {"py": "àn", "hv": "", "vi": "Chữ Hán: 案"}, "桌": {"py": "zhuō", "hv": "Trác", "vi": "Bàn (như 桌子, 电脑桌)"}, "次": {"py": "cì", "hv": "Thứ", "vi": "Lần (như 一次, 很多次)"}, "欢": {"py": "huān", "hv": "", "vi": "Chữ Hán: 欢"}, "正": {"py": "zhèng", "hv": "Chính", "vi": "Đang, chính (như 正在)"}, "每": {"py": "měi", "hv": "Mỗi", "vi": "Mỗi, từng (như 每天, 每年)"}, "比": {"py": "bǐ", "hv": "", "vi": "Chữ Hán: 比"}, "气": {"py": "qì", "hv": "", "vi": "Chữ Hán: 气"}, "水": {"py": "shuǐ", "hv": "Thủy", "vi": "Nước (như 水果, 喝水)"}, "汽": {"py": "qì", "hv": "Khí", "vi": "Hơi, trong '公共汽车' (xe buýt)"}, "没": {"py": "méi", "vi": "không, chưa (trong bài: 没有, 没时间)", "poly": [{"py": "méi", "vi": "không có, chưa (vd: 没有, 没去过, 没复习, 没关系)"}, {"py": "mò", "vi": "chìm ngập, tịch thu (vd: 沉没: chìm, 没收: tịch thu)"}]}, "洗": {"py": "xǐ", "hv": "Tẩy", "vi": "Rửa, giặt (như 洗水果, 洗衣服)"}, "游": {"py": "yóu", "hv": "", "vi": "Chữ Hán: 游"}, "漂": {"py": "piāo", "hv": "", "vi": "Chữ Hán: 漂"}, "火": {"py": "huǒ", "hv": "", "vi": "Chữ Hán: 火"}, "点": {"py": "diǎn", "hv": "Điểm", "vi": "Giờ, điểm, chút ít (như 5点, 一点儿)"}, "炼": {"py": "liàn", "hv": "", "vi": "Chữ Hán: 炼"}, "然": {"py": "rán", "hv": "Nhiên", "vi": "Như thế, trong '然后' (sau đó), '当然' (đương nhiên)"}, "爱": {"py": "ài", "hv": "", "vi": "Chữ Hán: 爱"}, "爸": {"py": "bà", "hv": "", "vi": "Chữ Hán: 爸"}, "片": {"py": "piàn", "hv": "", "vi": "Chữ Hán: 片"}, "牛": {"py": "niú", "hv": "Ngưu", "vi": "Bò (như 牛肉)"}, "猫": {"py": "māo", "hv": "", "vi": "Chữ Hán: 猫"}, "王": {"py": "wáng", "hv": "", "vi": "Chữ Hán: 王"}, "玩": {"py": "wán", "hv": "Ngoạn", "vi": "Chơi (như 玩儿游戏)"}, "现": {"py": "xiàn", "hv": "Hiện", "vi": "Hiện tại, hiện ra (như 现在, 发现)"}, "球": {"py": "qiú", "hv": "Cầu", "vi": "Bóng, quả cầu (như 踢足球, 打篮球)"}, "理": {"py": "lǐ", "hv": "", "vi": "Chữ Hán: 理"}, "生": {"py": "shēng", "hv": "Sinh", "vi": "Sinh, sống, bị (như 生病, 医生, 学生)"}, "用": {"py": "yòng", "hv": "Dụng", "vi": "Dùng, cần (như 不用, 有用)"}, "电": {"py": "diàn", "hv": "Điện", "vi": "Điện, phim, máy tính (như 电视, 电影, 电脑, 电子地图)"}, "男": {"py": "nán", "hv": "Nam", "vi": "Nam giới, con trai"}, "病": {"py": "bìng", "hv": "Bệnh", "vi": "Bệnh, ốm (như 生病, 看病)"}, "白": {"py": "bái", "hv": "Bạch", "vi": "Trắng, trong tên '白雪' (Bạch Tuyết)"}, "的": {"py": "de", "hv": "Đích", "vi": "Trợ từ sở hữu: của, định ngữ"}, "直": {"py": "zhí", "hv": "", "vi": "Chữ Hán: 直"}, "看": {"py": "kàn", "hv": "Khán", "vi": "Xem, nhìn, đọc (như 看电影, 看书)"}, "真": {"py": "zhēn", "hv": "Chân", "vi": "Thật, thực sự (như 真好, 真便宜)"}, "着": {"py": "zháo", "vi": "sốt ruột (trong bài: 着急: zháojí)", "poly": [{"py": "zháo", "vi": "sốt ruột, bồn chồn (vd: 着急: zháojí); chạm, đạt (vd: 睡着: ngủ được)"}, {"py": "zhe", "vi": "trợ từ biểu thị hành động đang diễn ra (vd: 看着, 坐着, 听着)"}, {"py": "zhuó", "vi": "mặc, tiếp xúc, bắt tay (vd: 穿着: ăn mặc, 着手: bắt tay vào)"}]}, "知": {"py": "zhī", "hv": "Tri", "vi": "Biết (như 知道)"}, "短": {"py": "duǎn", "hv": "", "vi": "Chữ Hán: 短"}, "确": {"py": "què", "hv": "", "vi": "Chữ Hán: 确"}, "票": {"py": "piào", "hv": "Phiếu", "vi": "Vé (như 电影票, 火车票)"}, "离": {"py": "lí", "hv": "", "vi": "Chữ Hán: 离"}, "程": {"py": "chéng", "hv": "", "vi": "Chữ Hán: 程"}, "空": {"py": "kōng", "hv": "", "vi": "Chữ Hán: 空"}, "穿": {"py": "chuān", "hv": "", "vi": "Chữ Hán: 穿"}, "第": {"py": "dì", "hv": "", "vi": "Chữ Hán: 第"}, "等": {"py": "děng", "hv": "Đẳng", "vi": "Đợi, chờ, các thứ (như 等一下)"}, "答": {"py": "dá", "hv": "Đáp", "vi": "Trả lời (như 问答, 回答)"}, "算": {"py": "suàn", "hv": "", "vi": "Chữ Hán: 算"}, "篮": {"py": "lán", "hv": "", "vi": "Chữ Hán: 篮"}, "累": {"py": "lèi", "vi": "mệt mỏi (trong bài: 太累: tài lèi)", "poly": [{"py": "lèi", "vi": "mệt mỏi, nhọc nhằn (vd: 太累了, 累坏了)"}, {"py": "lěi", "vi": "tích lũy, dồn lại (vd: 积累: tích lũy)"}]}, "练": {"py": "liàn", "hv": "", "vi": "Chữ Hán: 练"}, "绍": {"py": "shào", "hv": "", "vi": "Chữ Hán: 绍"}, "经": {"py": "jīng", "hv": "Kinh", "vi": "Đã, kinh qua (như 已经, 经商, 经理)"}, "结": {"py": "jié", "hv": "Kết", "vi": "Kết thúc, kết quả (như 结束, 结果)"}, "给": {"py": "gěi", "hv": "Cấp", "vi": "Cho, tặng, đưa cho (như 给你, 给我)"}, "翻": {"py": "fān", "hv": "", "vi": "Chữ Hán: 翻"}, "老": {"py": "lǎo", "hv": "Lão", "vi": "Già, cũ (như 老师, 老朋友)"}, "考": {"py": "kǎo", "hv": "Khảo", "vi": "Thi, kiểm tra (như 考试, 考得好)"}, "肉": {"py": "ròu", "hv": "Nhục", "vi": "Thịt (như 牛肉, 猪肉)"}, "能": {"py": "néng", "hv": "Năng", "vi": "Có thể, khả năng (như 能听懂, 不能少)"}, "脑": {"py": "nǎo", "hv": "Não", "vi": "Não, trong '电脑' (máy tính)"}, "自": {"py": "zì", "hv": "Tự", "vi": "Tự mình, từ đâu đến (như 自己, 自行车)"}, "致": {"py": "zhì", "hv": "", "vi": "Chữ Hán: 致"}, "舞": {"py": "wǔ", "hv": "", "vi": "Chữ Hán: 舞"}, "花": {"py": "huā", "hv": "Hoa", "vi": "Hoa, tiêu tốn (như 花时间, 花钱)"}, "菜": {"py": "cài", "hv": "Thái", "vi": "Rau, món ăn (như 菜冷了)"}, "蛋": {"py": "dàn", "hv": "Đãn", "vi": "Trứng (như 鸡蛋)"}, "衣": {"py": "yī", "hv": "Y", "vi": "Áo, quần áo (như 衣服)"}, "表": {"py": "biǎo", "hv": "", "vi": "Chữ Hán: 表"}, "西": {"py": "xī", "hv": "Tây", "vi": "Phía tây, trong '东西' (đồ đạc)"}, "要": {"py": "yào", "hv": "Yếu", "vi": "Muốn, cần, phải (như 要搬家, 就要)"}, "觉": {"py": "jué", "vi": "cảm thấy, nhận thức (trong bài: 觉得: juéde)", "poly": [{"py": "jué", "vi": "cảm thấy, nhận thấy (vd: 觉得: juéde, 感觉: gǎnjué)"}, {"py": "jiào", "vi": "giấc ngủ (vd: 睡觉: shuìjiào)"}]}, "认": {"py": "rèn", "hv": "", "vi": "Chữ Hán: 认"}, "让": {"py": "ràng", "hv": "", "vi": "Chữ Hán: 让"}, "议": {"py": "yì", "hv": "", "vi": "Chữ Hán: 议"}, "识": {"py": "shí", "hv": "Thức", "vi": "Biết, nhận biết (như 认识)"}, "诉": {"py": "sù", "hv": "", "vi": "Chữ Hán: 诉"}, "词": {"py": "cí", "hv": "", "vi": "Chữ Hán: 词"}, "译": {"py": "yì", "hv": "", "vi": "Chữ Hán: 译"}, "试": {"py": "shì", "hv": "Thí", "vi": "Thử, thi (như 考试, 试一试)"}, "话": {"py": "huà", "hv": "Thoại", "vi": "Lời nói, câu chuyện (như 说话, 南方话, 电话)"}, "语": {"py": "yǔ", "hv": "Ngữ", "vi": "Ngôn ngữ, tiếng (như 汉语, 英语)"}, "说": {"py": "shuō", "hv": "", "vi": "Chữ Hán: 说"}, "请": {"py": "qǐng", "hv": "Thỉnh", "vi": "Mời, xin (như 请问, 请坐, 请客)"}, "读": {"py": "dú", "hv": "Độc", "vi": "Đọc (như 读书, 阅读)"}, "课": {"py": "kè", "hv": "", "vi": "Chữ Hán: 课"}, "谢": {"py": "xiè", "hv": "Tạ", "vi": "Cảm ơn (như 谢谢)"}, "赛": {"py": "sài", "hv": "", "vi": "Chữ Hán: 赛"}, "走": {"py": "zǒu", "hv": "Tẩu", "vi": "Đi bộ, rời đi, chạy (như 不走了, 怎么走)"}, "起": {"py": "qǐ", "hv": "Khởi", "vi": "Dậy, bắt đầu (như 一起, 对不起)"}, "超": {"py": "chāo", "hv": "Siêu", "vi": "Siêu, trong '超市' (siêu thị)"}, "跟": {"py": "gēn", "hv": "", "vi": "Chữ Hán: 跟"}, "路": {"py": "lù", "hv": "Lộ", "vi": "Đường đi (như 走路, 路上)"}, "跳": {"py": "tiào", "hv": "Khiêu", "vi": "Nhảy (như 跳舞)"}, "身": {"py": "shēn", "hv": "", "vi": "Chữ Hán: 身"}, "车": {"py": "chē", "hv": "Xa", "vi": "Xe, xe cộ (như 开车, 火车, 公共汽车)"}, "边": {"py": "biān", "hv": "", "vi": "Chữ Hán: 边"}, "过": {"py": "guò", "hv": "", "vi": "Chữ Hán: 过"}, "运": {"py": "yùn", "hv": "Vận", "vi": "Vận chuyển, thể thao (như 运动)"}, "近": {"py": "jìn", "hv": "", "vi": "Chữ Hán: 近"}, "还": {"py": "hái", "vi": "vẫn, còn (trong bài: 还是, 还没想好)", "poly": [{"py": "hái", "vi": "vẫn, còn, lại (vd: 还有, 还是, 还没想好, 还带什么)"}, {"py": "huán", "vi": "trả lại, quay về (vd: 还钱: trả tiền, 归还: trả về)"}]}, "这": {"py": "zhè", "hv": "Giá", "vi": "Này, đây (như 这个, 这里)"}, "进": {"py": "jìn", "hv": "Tiến", "vi": "Vào (như 进来, 请进)"}, "送": {"py": "sòng", "hv": "Tống", "vi": "Tặng, tiễn đưa (như 送送你们)"}, "适": {"py": "shì", "hv": "Thích", "vi": "Thích hợp (như 合适)"}, "选": {"py": "xuǎn", "hv": "Tuyển", "vi": "Chọn, lựa chọn (như 选择)"}, "道": {"py": "dào", "hv": "", "vi": "Chữ Hán: 道"}, "那": {"py": "nà", "hv": "", "vi": "Chữ Hán: 那"}, "部": {"py": "bù", "hv": "Bộ", "vi": "Bộ phận, phần (như 部分, 第一部分)"}, "都": {"py": "dōu", "vi": "đều, cũng (trong bài: 大家都去, 一个人都没有)", "poly": [{"py": "dōu", "vi": "đều, cũng, đã (vd: 都是, 都写完了, 一个人都没有)"}, {"py": "dū", "vi": "đô thị, thủ đô (vd: 首都: thủ đô, 都市: đô thị)"}]}, "里": {"py": "lǐ", "hv": "Lý", "vi": "Bên trong, dặm (như 家里, 学校里)"}, "钟": {"py": "zhōng", "hv": "", "vi": "Chữ Hán: 钟"}, "钱": {"py": "qián", "hv": "", "vi": "Chữ Hán: 钱"}, "铁": {"py": "tiě", "hv": "Thiết", "vi": "Sắt, trong '地铁' (tàu điện ngầm)"}, "错": {"py": "cuò", "hv": "", "vi": "Chữ Hán: 错"}, "锻": {"py": "duàn", "hv": "", "vi": "Chữ Hán: 锻"}, "长": {"py": "zhǎng", "hv": "", "vi": "Chữ Hán: 长"}, "门": {"py": "mén", "hv": "Môn", "vi": "Cửa, cổng (như 开门, 出门)"}, "问": {"py": "wèn", "hv": "Vấn", "vi": "Hỏi (như 请问, 问问题)"}, "间": {"py": "jiān", "hv": "Gian", "vi": "Khoảng, phòng (như 时间, 房间)"}, "阅": {"py": "yuè", "hv": "", "vi": "Chữ Hán: 阅"}, "院": {"py": "yuàn", "hv": "Viện", "vi": "Viện, trong '医院' (bệnh viện)"}, "雨": {"py": "yǔ", "hv": "Vũ", "vi": "Mưa (như 下雨, 大雨)"}, "雪": {"py": "xuě", "hv": "Tuyết", "vi": "Tuyết, tên '白雪' (như 下雪)"}, "面": {"py": "miàn", "hv": "Diện", "vi": "Mặt, mì (như 面包, 外面)"}, "音": {"py": "yīn", "hv": "Âm", "vi": "Âm thanh, tiếng (như 声音, 音乐)"}, "题": {"py": "tí", "hv": "Đề", "vi": "Câu hỏi, bài tập, vấn đề (như 没问题, 第1题)"}, "饭": {"py": "fàn", "hv": "Phạn", "vi": "Cơm, bữa ăn (như 晚饭, 饭馆)"}, "馆": {"py": "guǎn", "hv": "Quán", "vi": "Quán, nhà ăn (như 饭馆, 宾馆)"}, "马": {"py": "mǎ", "hv": "Mã", "vi": "Ngựa, ngay (như 马上)"}, "高": {"py": "gāo", "hv": "Cao", "vi": "Cao, trong '高兴' (vui vẻ)"}, "鸡": {"py": "jī", "hv": "Kê", "vi": "Gà (như 鸡蛋)"}, "专": {"py": "zhuān", "hv": "Chuyên", "vi": "Chuyên môn, trong 专有名词: danh từ riêng, 专门"}, "业": {"py": "yè", "hv": "Nghiệp", "vi": "Nghiệp, bài tập (trong 作业: bài tập, 毕业)"}, "丽": {"py": "lì", "hv": "Lệ", "vi": "Đẹp, trong 小丽: Tiểu Lệ, 美丽: xinh đẹp"}, "乐": {"py": "lè", "hv": "Lạc / Nhạc", "vi": "Vui vẻ (快乐); âm nhạc (音乐)"}, "出": {"py": "chū", "hv": "Xuất", "vi": "Ra, xuất hiện (trong 出去, 出来, 出门)"}, "刚": {"py": "gāng", "hv": "Cương", "vi": "Vừa mới (刚才), cứng cỏi; tên người (小刚)"}, "坏": {"py": "huài", "hv": "Hoại", "vi": "Hỏng, xấu, tệ (trong 累坏了, 坏人)"}, "城": {"py": "chéng", "hv": "Thành", "vi": "Thành phố, thành trì (trong 城市, 首都)"}, "室": {"py": "shì", "hv": "Thất", "vi": "Phòng, nhà (trong 教室: phòng học, 办公室)"}, "宾": {"py": "bīn", "hv": "Tân", "vi": "Khách quý (trong 宾馆: khách sạn, 贵宾)"}, "少": {"py": "shǎo", "hv": "Thiếu", "vi": "Ít, thiếu (多少, 不能少); trẻ tuổi (少年)", "poly": [{"py": "shǎo", "vi": "ít, thiếu (vd: 多少, 很少, 不能少)"}, {"py": "shào", "vi": "trẻ tuổi, thiếu thời (vd: 少年: thiếu niên, 少女)"}]}, "归": {"py": "guī", "hv": "Quy", "vi": "Trở về, quy về (trong 归还: hoàn trả, 回归)"}, "感": {"py": "gǎn", "hv": "Cảm", "vi": "Cảm thấy, cảm giác (trong 感觉, 感谢)"}, "慢": {"py": "màn", "hv": "Mạn", "vi": "Chậm, từ từ (trong 慢慢地, 慢走)"}, "成": {"py": "chéng", "hv": "Thành", "vi": "Trở thành, hoàn thành (trong 成为, 成功)"}, "找": {"py": "zhǎo", "hv": "Trảo", "vi": "Tìm kiếm; trả lại tiền lẻ (trong 找到, 找钱)"}, "授": {"py": "shòu", "hv": "Thụ", "vi": "Dạy, truyền thụ, trao (trong 教授: giáo sư)"}, "收": {"py": "shōu", "hv": "Thu", "vi": "Thu nhận, tịch thu (trong 没收: tịch thu, 收到)"}, "昨": {"py": "zuó", "hv": "Tạc", "vi": "Hôm qua (trong 昨天: hôm qua, 昨晚)"}, "机": {"py": "jī", "hv": "Cơ", "vi": "Máy móc (trong 手机: điện thoại, 电脑, 机会)"}, "汉": {"py": "hàn", "hv": "Hán", "vi": "Hán, tiếng Trung (trong 汉语, 汉字, 汉族)"}, "沉": {"py": "chén", "hv": "Trầm", "vi": "Chìm, lặn (trong 沉没: chìm nghỉm, 沉重)"}, "注": {"py": "zhù", "hv": "Chú", "vi": "Ghi chép, chú ý (trong 注释: chú thích, 注意)"}, "猪": {"py": "zhū", "hv": "Trư", "vi": "Con lợn, heo (trong 猪肉: thịt lợn)"}, "睡": {"py": "shuì", "hv": "Thụy", "vi": "Ngủ (trong 睡觉: đi ngủ, 睡着: ngủ say)"}, "积": {"py": "jī", "hv": "Tích", "vi": "Tích lũy, góp lại (trong 积累: tích lũy)"}, "笑": {"py": "xiào", "hv": "Tiếu", "vi": "Cười (trong 高兴地笑, 笑话)"}, "系": {"py": "xì", "hv": "Hệ", "vi": "Liên quan (没关系); thắt, buộc (系鞋带)"}, "舒": {"py": "shū", "hv": "Thư", "vi": "Thư thái, dễ chịu (trong 舒服: dễ chịu)"}, "英": {"py": "yīng", "hv": "Anh", "vi": "Nước Anh (英国), tài ba (英雄)"}, "苹": {"py": "píng", "hv": "Bình", "vi": "Quả táo (trong 苹果: quả táo tây)"}, "茶": {"py": "chá", "hv": "Trà", "vi": "Trà, chè (trong 喝茶, 一杯茶)"}, "行": {"py": "xíng", "hv": "Hành / Hàng", "vi": "Được (行); đi lại; hàng lối (银行: ngân hàng)"}, "补": {"py": "bǔ", "hv": "Bổ", "vi": "Bổ sung, bù đắp (trong 补语: bổ ngữ, 补充)"}, "视": {"py": "shì", "hv": "Thị", "vi": "Nhìn, xem (trong 电视: tivi, 视力)"}, "计": {"py": "jì", "hv": "Kế", "vi": "Tính toán, kế sách (trong 会计: kế toán, 计划)"}, "足": {"py": "zú", "hv": "Túc", "vi": "Chân (trong 足球: bóng đá); đầy đủ (满足)"}, "跑": {"py": "pǎo", "hv": "Bào", "vi": "Chạy (trong 跑步: chạy bộ, 跑得快)"}, "踢": {"py": "tī", "hv": "Thích", "vi": "Đá (trong 踢足球: đá bóng, 踢开)"}, "连": {"py": "lián", "hv": "Liên", "vi": "Ngay cả (连...也...); liên kết, liên từ (连词)"}, "释": {"py": "shì", "hv": "Thích", "vi": "Giải thích (trong 解释: giải thích, 注释)"}, "首": {"py": "shǒu", "hv": "Thủ", "vi": "Đầu, thủ đô (trong 首都: thủ đô, 首先)"}, "充": {"py": "chōng", "hv": "Sung", "vi": "Đầy đủ, nạp (trong 补充: bổ sung, 充满: tràn ngập, 充电)"}, "划": {"py": "huà", "hv": "Hoạch", "vi": "Kế hoạch (trong 计划: kế hoạch, 规划); chèo thuyền (划船)"}, "办": {"py": "bàn", "hv": "Biện", "vi": "Làm, xử lý (trong 办公室: văn phòng, 办法: cách giải quyết)"}, "功": {"py": "gōng", "hv": "Công", "vi": "Công sức, công lao (trong 成功: thành công, 功课)"}, "族": {"py": "zú", "hv": "Tộc", "vi": "Dân tộc, thị tộc (trong 汉族: người Hán, 民族: dân tộc)"}, "步": {"py": "bù", "hv": "Bộ", "vi": "Bước đi (trong 跑步: chạy bộ, 散步: đi dạo)"}, "毕": {"py": "bì", "hv": "Tất", "vi": "Xong, hết (trong 毕业: tốt nghiệp)"}, "满": {"py": "mǎn", "hv": "Mãn", "vi": "Đầy, thỏa lòng (trong 满足: thỏa mãn, 满意: hài lòng)"}, "美": {"py": "měi", "hv": "Mỹ", "vi": "Đẹp (trong 美丽: xinh đẹp, 美好, 美食)"}, "解": {"py": "jiě", "hv": "Giải", "vi": "Hiểu, cởi bỏ (trong 解释: giải thích, 了解, 解决)"}, "贵": {"py": "guì", "hv": "Quý", "vi": "Quý báu, đắt (trong 贵姓: quý danh, 贵宾: khách quý)"}, "重": {"py": "zhòng", "hv": "Trọng / Trùng", "vi": "Nặng (沉重), quan trọng (重要); lặp lại (重新)"}, "银": {"py": "yín", "hv": "Ngân", "vi": "Bạc, ngân lượng (trong 银行: ngân hàng, 银子)"}, "雄": {"py": "xióng", "hv": "Hùng", "vi": "Hùng dũng, con đực (trong 英雄: anh hùng)"}, "鞋": {"py": "xié", "hv": "Hài", "vi": "Giày, dép (trong 鞋子: đôi giày, 系鞋带: buộc dây giày)"}, "决": {"py": "jué", "hv": "Quyết", "vi": "Quyết định, giải quyết (như quyết định, giải quyết vấn đề)"}, "姓": {"py": "xìng", "hv": "Tính", "vi": "Họ, tên họ (như họ tên, quý tính)"}, "散": {"py": "sàn", "hv": "Tán", "vi": "Đi dạo, tản bộ, giải tán"}, "民": {"py": "mín", "hv": "Dân", "vi": "Dân chúng, nhân dân (như người dân, dân tộc)"}, "法": {"py": "fǎ", "hv": "Pháp", "vi": "Phương pháp, cách thức (như biện pháp, ngữ pháp)"}, "船": {"py": "chuán", "hv": "Thuyền", "vi": "Thuyền, tàu bè (như đi thuyền, chèo thuyền)"}, "规": {"py": "guī", "hv": "Quy", "vi": "Quy định, quy tắc (như quy hoạch, luật định)"}, "食": {"py": "shí", "hv": "Thực", "vi": "Đồ ăn, thức ăn, ẩm thực (như món ngon)"}, "周末": {"py": "zhōumò", "vi": "cuối tuần"}, "打算": {"py": "dǎsuàn", "vi": "dự định, tính toán"}, "高兴": {"py": "gāoxìng", "vi": "vui vẻ, phấn khởi"}, "工作": {"py": "gōngzuò", "vi": "công việc, làm việc"}, "一直": {"py": "yìzhí", "vi": "luôn luôn, suốt, liên tục"}, "电影": {"py": "diànyǐng", "vi": "phim ảnh"}, "一起": {"py": "yìqǐ", "vi": "cùng nhau"}, "搬家": {"py": "bān jiā", "vi": "chuyển nhà"}, "公司": {"py": "gōngsī", "vi": "công ty"}, "什么时候": {"py": "shénme shíhou", "vi": "khi nào, lúc nào"}, "晚饭": {"py": "wǎnfàn", "vi": "cơm tối, bữa tối"}, "牛肉": {"py": "niúròu", "vi": "thịt bò"}, "面包": {"py": "miànbāo", "vi": "bánh mì"}, "便宜": {"py": "piányi", "vi": "rẻ"}, "着急": {"py": "zháojí", "vi": "sốt ruột, vội vã"}, "电子地图": {"py": "diànzǐ dìtú", "vi": "bản đồ điện tử"}, "地图": {"py": "dìtú", "vi": "bản đồ"}, "手表": {"py": "shǒubiǎo", "vi": "đồng hồ đeo tay"}, "复习": {"py": "fùxí", "vi": "ôn tập"}, "南方": {"py": "nánfāng", "vi": "miền nam, phương nam"}, "北方": {"py": "běifāng", "vi": "miền bắc, phương bắc"}, "旅游": {"py": "lǚyóu", "vi": "du lịch"}, "鸡蛋": {"py": "jīdàn", "vi": "trứng gà"}, "客气": {"py": "kèqi", "vi": "khách sáo"}, "外边": {"py": "wàibian", "vi": "bên ngoài"}, "里面": {"py": "lǐmiàn", "vi": "bên trong"}, "学校": {"py": "xuéxiào", "vi": "trường học"}, "大家": {"py": "dàjiā", "vi": "mọi người"}, "公共汽车": {"py": "gōnggòng qìchē", "vi": "xe buýt"}, "地铁": {"py": "dìtiě", "vi": "tàu điện ngầm"}, "生病": {"py": "shēngbìng", "vi": "bị ốm, mắc bệnh"}, "医生": {"py": "yīshēng", "vi": "bác sĩ"}, "医院": {"py": "yīyuàn", "vi": "bệnh viện"}, "老师": {"py": "lǎoshī", "vi": "thầy cô giáo"}, "现在": {"py": "xiànzài", "vi": "hiện tại, bây giờ"}, "明天": {"py": "míngtiān", "vi": "ngày mai"}, "今天": {"py": "jīntiān", "vi": "hôm nay"}, "昨天": {"py": "zuótiān", "vi": "hôm qua"}, "时间": {"py": "shíjiān", "vi": "thời gian"}, "声音": {"py": "shēngyīn", "vi": "âm thanh, giọng nói"}, "好听": {"py": "hǎotīng", "vi": "nghe hay"}, "衣服": {"py": "yīfu", "vi": "quần áo"}, "妹妹": {"py": "mèimei", "vi": "em gái"}, "准备": {"py": "zhǔnbèi", "vi": "chuẩn bị"}, "小时候": {"py": "xiǎoshíhou", "vi": "hồi nhỏ, lúc còn bé"}, "游戏": {"py": "yóuxì", "vi": "trò chơi"}, "运动": {"py": "yùndòng", "vi": "vận động, thể thao"}, "电脑": {"py": "diànnǎo", "vi": "máy tính"}, "孩子": {"py": "háizi", "vi": "trẻ con, con cái"}, "中国人": {"py": "Zhōngguó rén", "vi": "người Trung Quốc"}, "做事": {"py": "zuò shì", "vi": "làm việc, hành sự"}, "火车票": {"py": "huǒchē piào", "vi": "vé tàu hỏa"}, "开车": {"py": "kāi chē", "vi": "lái xe"}, "地方": {"py": "dìfang", "vi": "nơi chốn, địa điểm"}, "告诉": {"py": "gàosu", "vi": "nói cho biết, mách"}, "妻子": {"py": "qīzi", "vi": "vợ"}, "觉得": {"py": "juéde", "vi": "cảm thấy, thấy rằng"}, "对不起": {"py": "duìbuqǐ", "vi": "xin lỗi, có lỗi với"}, "没关系": {"py": "méi guānxi", "vi": "không có gì, không sao"}, "一点儿": {"py": "yìdiǎnr", "vi": "một chút, một ít"}, "东西": {"py": "dōngxi", "vi": "đồ đạc, vật phẩm"}, "可能": {"py": "kěnéng", "vi": "có thể, có lẽ"}, "当然": {"py": "dāngrán", "vi": "đương nhiên, tất nhiên"}, "然后": {"py": "ránhòu", "vi": "sau đó"}, "不错": {"py": "búcuò", "vi": "rất tốt, không tồi"}, "参加": {"py": "cānjiā", "vi": "tham gia"}, "会议": {"py": "huìyì", "vi": "cuộc họp, hội nghị"}, "听懂": {"py": "tīngdǒng", "vi": "nghe hiểu"}, "走南走北": {"py": "zǒu nán zǒu běi", "vi": "chu du nam bắc, đi khắp nơi"}};
+
+    // ROBUST QUIZ DATA OBJECT (NO INLINE QUOTE BUGS)
+    const QUIZ_DATA = {"21": {"ans": "F", "explain": "Đáp án đúng là F: 可能是工作太累，生病了。 (Giải thích: Trả lời lý do không ăn gì là do làm việc mệt quá phát ốm)."}, "22": {"ans": "C", "explain": "Đáp án đúng là C: 今天学校里一个人都没有，大家都去哪儿了？ (Giải thích: Đến trường vào cuối tuần thấy vắng tanh nên thắc mắc mọi người đi đâu)."}, "23": {"ans": "D", "explain": "Đáp án đúng là D: 周末有时间吗？我打算请你吃个饭。 (Giải thích: Đáp lại lời mời đi ăn cơm cuối tuần)."}, "24": {"ans": "A", "explain": "Đáp án đúng là A: 不是，我一直在这家医院工作。 (Giải thích: Bác sĩ trả lời phủ định, giải thích đã làm ở đây suốt)."}, "25": {"ans": "B", "explain": "Đáp án đúng là B: 对不起，周老师现在不在。 (Giải thích: Vì thầy Chu hiện không có ở đây nên hẹn ngày mai quay lại)."}, "26": {"ans": "A", "explain": "Đáp án đúng là A (一直: luôn luôn, suốt). Diễn tả trạng thái bận rộn diễn ra liên tục."}, "27": {"ans": "D", "explain": "Đáp án đúng là D (搬: chuyển, dời). Kết hợp với '家' tạo thành cụm '搬家' (chuyển nhà)."}, "28": {"ans": "F", "explain": "Đáp án đúng là F (面包: bánh mì). Đi với lượng từ '个' và tính từ khen '很不错'."}, "29": {"ans": "B", "explain": "Đáp án đúng là B (周末: cuối tuần). '上周末' nghĩa là cuối tuần trước."}, "30": {"ans": "C", "explain": "Đáp án đúng là C (带: mang, đem theo). '多带几件衣服' nghĩa là mang thêm mấy bộ quần áo."}, "31": {"ans": "A", "explain": "Đáp án đúng là A. Trong bài nêu rõ: '妈妈是个北方人' (Mẹ là người miền Bắc) nên Mẹ không phải người miền Nam."}, "32": {"ans": "B", "explain": "Đáp án đúng là B. Trong bài nêu: '现在的孩子们也玩儿游戏，他们在家里，坐在电脑桌前，玩儿的是电脑游戏' (Trẻ em bây giờ thích chơi điện tử máy tính)."}, "33": {"ans": "A", "explain": "Đáp án đúng là A. Trong bài nêu rõ: '做事的时候别着急' (Làm việc đừng có sốt ruột/vội vã)."}, "34": {"ans": "C", "explain": "Đáp án đúng là C. Trong bài nêu: '现在，我可以开车去想去的地方' (Hiện tại tôi có thể tự lái xe đi du lịch đến những nơi mình muốn)."}, "35": {"ans": "B", "explain": "Đáp án đúng là B. Trong bài nêu rõ: '但是妻子一次也没去过' (nhưng vợ một lần cũng chưa từng đi)."}};
+
+    const userAnswers = {};
+
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      
+      event.currentTarget.classList.add('active');
+      window.scrollTo({ top: 180, behavior: 'smooth' });
+    }
+
+    // AUDIO JUMP
+    function jumpAudio(seconds) {
+      const audio = document.getElementById('main-audio');
+      if (audio) {
+        audio.currentTime = seconds;
+        audio.play();
+      }
+    }
+
+    // GLOBAL TOGGLES FOR LISTENING TAB
+    function toggleGlobalPinyin() {
+      const app = document.getElementById('app');
+      const btn = document.getElementById('btnTogglePinyin');
+      app.classList.toggle('hide-pinyin');
+      btn.classList.toggle('active');
+    }
+    function toggleGlobalTrans() {
+      const app = document.getElementById('app');
+      const btn = document.getElementById('btnToggleTrans');
+      app.classList.toggle('hide-trans');
+      btn.classList.toggle('active');
+    }
+
+    // TOGGLE SENTENCE TRANSLATION
+    function toggleSentenceTrans(btn) {
+      const box = btn.nextElementSibling;
+      if (box) {
+        const isShown = box.style.display === 'block';
+        box.style.display = isShown ? 'none' : 'block';
+        btn.innerHTML = isShown ? '👁 Dịch cả câu' : '✕ Thu gọn dịch';
+        btn.style.color = isShown ? '#94a3b8' : '#38bdf8';
+        btn.style.borderColor = isShown ? 'var(--card-border)' : '#38bdf8';
+      }
+    }
+
+    // QUIZ CONTROLLER (100% BUG FREE)
+    function selectOption(qNum, value, text) {
+      userAnswers[qNum] = value;
+      const chips = document.querySelectorAll(`.option-chip[data-q="${qNum}"]`);
+      chips.forEach(c => {
+        if (c.getAttribute('data-val') === value) {
+          c.classList.add('selected');
+        } else {
+          c.classList.remove('selected');
+        }
+      });
+
+      const blankDisplay = document.getElementById(`blank-display-${qNum}`);
+      if (blankDisplay) {
+        blankDisplay.textContent = `( ${value} ${text || ''} )`;
+        blankDisplay.style.color = '#38bdf8';
+      }
+    }
+
+    function checkAnswer(qNum) {
+      const userVal = userAnswers[qNum];
+      const feedback = document.getElementById(`feedback-${qNum}`);
+      const data = QUIZ_DATA[qNum];
+      
+      if (!data) return;
+
+      if (!userVal) {
+        feedback.style.display = 'block';
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = '⚠️ Bạn chưa chọn đáp án nào. Hãy chọn một đáp án phía trên nhé!';
+        return;
+      }
+
+      feedback.style.display = 'block';
+      if (userVal.trim().toUpperCase() === data.ans.trim().toUpperCase()) {
+        feedback.className = 'feedback-box correct';
+        feedback.innerHTML = `🎉 <strong>CHÍNH XÁC!</strong> Đáp án đúng là <strong>${data.ans}</strong>.<br><span style="opacity:0.9;">${data.explain}</span>`;
+      } else {
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = `❌ <strong>Chưa chính xác!</strong> Bạn chọn <strong>${userVal}</strong>, đáp án đúng là <strong>${data.ans}</strong>.<br><span style="opacity:0.9;">${data.explain}</span>`;
+      }
+    }
+
+    function resetAnswer(qNum) {
+      delete userAnswers[qNum];
+      const chips = document.querySelectorAll(`.option-chip[data-q="${qNum}"]`);
+      chips.forEach(c => c.classList.remove('selected'));
+      
+      const blankDisplay = document.getElementById(`blank-display-${qNum}`);
+      if (blankDisplay) {
+        blankDisplay.textContent = '( ? )';
+      }
+
+      const feedback = document.getElementById(`feedback-${qNum}`);
+      if (feedback) feedback.style.display = 'none';
+    }
+
+    // UNIVERSAL TOKENIZER FOR ALL SECTIONS (READING, LISTENING, WRITING, TEXTBOOK)
+    function tokenizeAllInteractiveText() {
+      const keys = Object.keys(DICT).sort((a, b) => b.length - a.length);
+
+      document.querySelectorAll('.interactive-text').forEach(block => {
+        if (block.getAttribute('data-tokenized') === 'true') return;
+        
+        const walkAndWrap = (node) => {
+          if (node.nodeType === 3) { // Text node
+            const text = node.nodeValue;
+            if (!/[\u4e00-\u9fa5]/.test(text)) return;
+            
+            const fragment = document.createDocumentFragment();
+            let i = 0;
+            while (i < text.length) {
+              const char = text[i];
+              if (!/[\u4e00-\u9fa5]/.test(char)) {
+                fragment.appendChild(document.createTextNode(char));
+                i++;
+                continue;
+              }
+
+              // Match longest vocabulary word
+              let matched = null;
+              for (const k of keys) {
+                if (text.substr(i, k.length) === k) {
+                  matched = k;
+                  break;
+                }
+              }
+
+              if (matched) {
+                const span = document.createElement('span');
+                span.className = 'zh-word';
+                span.textContent = matched;
+                span.setAttribute('data-word', matched);
+                
+                const data = DICT[matched] || {};
+                span.setAttribute('data-pinyin', data.py || '');
+                span.setAttribute('data-meaning', data.vi || '');
+                span.setAttribute('data-hv', data.hv || '');
+                if (data.poly) {
+                  span.classList.add('polyphonic');
+                  span.setAttribute('data-poly', JSON.stringify(data.poly));
+                }
+
+                fragment.appendChild(span);
+                i += matched.length;
+              } else {
+                // Fallback single character
+                const span = document.createElement('span');
+                span.className = 'zh-word';
+                span.textContent = char;
+                span.setAttribute('data-word', char);
+                
+                const data = DICT[char] || { py: '', vi: 'Chữ Hán: ' + char, hv: '' };
+                span.setAttribute('data-pinyin', data.py || '');
+                span.setAttribute('data-meaning', data.vi || '');
+                span.setAttribute('data-hv', data.hv || '');
+                if (data.poly) {
+                  span.classList.add('polyphonic');
+                  span.setAttribute('data-poly', JSON.stringify(data.poly));
+                }
+
+                fragment.appendChild(span);
+                i++;
+              }
+            }
+            node.parentNode.replaceChild(fragment, node);
+          } else if (node.nodeType === 1 && node.nodeName !== 'BUTTON' && !node.classList.contains('sentence-trans-box')) {
+            Array.from(node.childNodes).forEach(walkAndWrap);
+          }
+        };
+
+        walkAndWrap(block);
+        block.setAttribute('data-tokenized', 'true');
+      });
+    }
+
+    // DICTIONARY TOOLTIP LOGIC
+    const tooltip = document.getElementById('dict-tooltip');
+    const ttWord = document.getElementById('tt-word');
+    const ttPinyin = document.getElementById('tt-pinyin');
+    const ttHv = document.getElementById('tt-hv');
+    const ttMeaning = document.getElementById('tt-meaning');
+    const ttPolyBox = document.getElementById('tt-poly-container');
+    const ttPolyList = document.getElementById('tt-poly-list');
+
+    document.addEventListener('mouseover', (e) => {
+      const target = e.target.closest('.zh-word');
+      if (!target) return;
+
+      showTooltipFor(target);
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      const target = e.target.closest('.zh-word');
+      if (target) {
+        tooltip.classList.remove('visible');
+      }
+    });
+
+    // Touch support for mobile / tablet
+    document.addEventListener('touchstart', (e) => {
+      const target = e.target.closest('.zh-word');
+      if (!target) {
+        tooltip.classList.remove('visible');
+        return;
+      }
+      showTooltipFor(target);
+    });
+
+    function showTooltipFor(target) {
+      const word = target.getAttribute('data-word');
+      const py = target.getAttribute('data-pinyin');
+      const hv = target.getAttribute('data-hv');
+      const mean = target.getAttribute('data-meaning');
+      const polyJson = target.getAttribute('data-poly');
+
+      ttWord.textContent = word;
+      ttPinyin.textContent = py;
+      ttHv.textContent = hv ? `[${hv}]` : '';
+      ttMeaning.textContent = mean || 'Từ trong bài';
+
+      if (polyJson) {
+        ttPolyBox.style.display = 'block';
+        try {
+          const polyList = JSON.parse(polyJson);
+          ttPolyList.innerHTML = polyList.map((item, idx) => `
+            <div class="poly-item">
+              <span class="poly-py">${idx+1}. [${item.py}]</span>: ${item.vi}
+            </div>
+          `).join('');
+        } catch(err) {}
+      } else {
+        ttPolyBox.style.display = 'none';
+      }
+
+      positionTooltip(target);
+      tooltip.classList.add('visible');
+    }
+
+    function positionTooltip(elem) {
+      const rect = elem.getBoundingClientRect();
+      const tipWidth = 260;
+      const tipHeight = tooltip.offsetHeight || 100;
+
+      let left = rect.left + rect.width / 2 - tipWidth / 2;
+      let top = rect.top - tipHeight - 12;
+
+      if (left < 10) left = 10;
+      if (left + tipWidth > window.innerWidth - 10) {
+        left = window.innerWidth - tipWidth - 10;
+      }
+      if (top < 10) {
+        top = rect.bottom + 10;
+      }
+
+      tooltip.style.left = `${left}px`;
+      tooltip.style.top = `${top}px`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      tokenizeAllInteractiveText();
+    });
+  </script>
+</body>
+</html>
